@@ -491,9 +491,12 @@ export default function Home() {
                 </Magnetic>
 
                 <Magnetic>
-                  <button className="border border-outline-variant text-on-surface px-8 py-4 rounded-xl font-label-caps text-label-caps hover:bg-white/5 transition-all duration-300">
+                  <a
+                    href="#projects"
+                    className="border border-outline-variant text-on-surface px-8 py-4 rounded-xl font-label-caps text-label-caps hover:bg-white/5 transition-all duration-300 inline-block"
+                  >
                     View Projects
-                  </button>
+                  </a>
                 </Magnetic>
               </div>
             </div>
@@ -826,6 +829,13 @@ export default function Home() {
                   img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop",
                   tags: ["Java", "Swing", "MySQL", "Desktop App"],
                   github: "https://github.com/moajjem441/Mini_Social_Media"
+                },
+                {
+                  title: "Liver Disease Stage Prediction",
+                  desc: "A machine learning project focused on predictive modeling for liver disease stage detection using data analysis and ML algorithms.",
+                  img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop",
+                  tags: ["Machine Learning", "Python", "Data Analysis", "Healthcare AI"],
+                  github: "https://github.com/moajjem441/Predictive-Modeling-for-Liver-Disease-Stages-using-ML"
                 }
               ].map((project, idx) => (
                 <TiltCard key={idx} className="project-card rounded-[40px] p-8 group cursor-pointer">
@@ -972,7 +982,7 @@ export default function Home() {
             </div>
 
             <div className="font-body-md text-sm text-on-surface-variant opacity-60">
-              © 2026 Moajjem Hossain. Crafted with passion.
+              © 2026 Moajjem Hossain. Built with passion and gratitude to Allah.
             </div>
 
           </div>

@@ -857,7 +857,13 @@ export default function Home() {
               </p>
             </div>
 
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <form className="grid grid-cols-1 md:grid-cols-2 gap-8" onSubmit={(e) => {
+              e.preventDefault();
+              alert("Thanks! I will contact you soon.");
+            }} 
+            
+            >
+
               <div className="space-y-2">
                 <label className="font-label-caps text-[10px] uppercase text-primary tracking-widest ml-1">Name</label>
                 <input
@@ -894,11 +900,11 @@ export default function Home() {
             <div className="mt-16 pt-12 border-t border-white/5 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
                 <p className="font-label-caps text-[10px] uppercase text-on-surface-variant mb-2">Email</p>
-                <a href="mailto:moajjem@example.com" className="text-on-surface hover:text-primary transition-colors">moajjem@example.com</a>
+                <a href="mailto:moajjem@example.com" className="text-on-surface hover:text-primary transition-colors">moajjem441@gmail.com</a>
               </div>
               <div>
                 <p className="font-label-caps text-[10px] uppercase text-on-surface-variant mb-2">Phone</p>
-                <p className="text-on-surface">+8801XXXXXXXXX</p>
+                <p className="text-on-surface">+8801708372039</p>
               </div>
               <div>
                 <p className="font-label-caps text-[10px] uppercase text-on-surface-variant mb-2">Location</p>

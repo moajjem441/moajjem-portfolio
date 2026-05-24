@@ -550,8 +550,8 @@ export default function Home() {
                 <div className="space-y-12">
                   {[
                     { year: "2023", title: "Started BUBT", desc: "Began my journey in Computer Science and Engineering." },
-                    { year: "2024", title: "Problem Solver", desc: "Achieved 690+ rating on Codeforces and 10+ real-world projects." }
-                    { year: "2025", title: "MERN Mastery", desc: "Deep dived into Full Stack Development with React and Node.js." },
+                    { year: "2024", title: "Problem Solver", desc: "Achieved 690+ rating on Codeforces and 10+ real-world projects." },
+                    { year: "2025", title: "MERN Mastery", desc: "Deep dived into Full Stack Development with React and Node.js." }
                   ].map((item, idx) => (
                     <div key={idx} className="relative pl-8 border-l border-white/10 reveal-up">
                       <div className="absolute left-[-5px] top-0 w-[10px] h-[10px] rounded-full bg-primary" />
@@ -791,12 +791,25 @@ export default function Home() {
                   img: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=1000&auto=format&fit=crop",
                   tags: ["React", "Node.js", "MongoDB", "Stripe"]
                 },
+                
                 {
-                  title: "Social Ecosystem",
-                  desc: "A Java Swing based desktop application demonstrating complex GUI and networking patterns.",
-                  img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop",
-                  tags: ["Java", "Swing", "MySQL", "Socket.io"]
-                }
+  title: "Mind Refreshment App",
+  desc: "A mental wellness application designed to help users track mood, relax, and improve mental well-being using interactive features.",
+  img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1000&auto=format&fit=crop",
+  tags: ["React", "Node.js", "MongoDB", "Mental Health"]
+},
+{
+  title: "Third Eye Assistive System",
+  desc: "An IoT-based assistive system for visually impaired users providing obstacle detection and real-time audio feedback.",
+  img: "https://images.unsplash.com/photo-1581091870622-3d6f3d5f0f2c?q=80&w=1000&auto=format&fit=crop",
+  tags: ["IoT", "Arduino", "Sensors", "Assistive Tech"]
+},
+{
+  title: "Payoo App",
+  desc: "A secure digital payment and wallet system with transaction management and user authentication features.",
+  img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1000&auto=format&fit=crop",
+  tags: ["React", "Node.js", "MongoDB", "Fintech"]
+}
               ].map((project, idx) => (
                 <TiltCard key={idx} className="project-card rounded-[40px] p-8 group cursor-pointer">
                   <div className="aspect-[16/9] rounded-3xl overflow-hidden mb-8 border border-white/5 bg-surface-container-high/50 relative">

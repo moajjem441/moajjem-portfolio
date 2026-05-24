@@ -792,26 +792,40 @@ export default function Home() {
                   title: "Travel Booking Platform",
                   desc: "A comprehensive MERN stack application with real-time availability and secure payments.",
                   img: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=1000&auto=format&fit=crop",
-                  tags: ["React", "Node.js", "MongoDB", "Stripe"]
+                  tags: ["React", "Node.js", "MongoDB", "Stripe"],
+                  github: "https://github.com/moajjem441/travel-booking-platform"
                 },
 
                 {
                   title: "Mind Refreshment App",
                   desc: "A mental wellness application designed to help users track mood, relax, and improve mental well-being using interactive features.",
                   img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1000&auto=format&fit=crop",
-                  tags: ["React", "Node.js", "MongoDB", "Mental Health"]
+                  tags: ["React", "Node.js", "MongoDB", "Mental Health"],
+                  github: "https://github.com/moajjem441/Mind_Refreshment_App_-Sem-6-"
                 },
+
                 {
                   title: "Third Eye Assistive System",
                   desc: "An IoT-based assistive system for visually impaired users providing obstacle detection and real-time audio feedback.",
                   img: "https://m.media-amazon.com/images/I/51kxxwhbUML.jpg",
-                  tags: ["IoT", "Arduino", "Sensors", "Assistive Tech"]
+                  tags: ["IoT", "Arduino", "Sensors", "Assistive Tech"],
+                  github: "https://github.com/moajjem441/third-eye-assistive-system"
                 },
+
                 {
                   title: "Payoo App",
                   desc: "A secure digital payment and wallet system with transaction management and user authentication features.",
                   img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1000&auto=format&fit=crop",
-                  tags: ["React", "Node.js", "MongoDB", "Fintech"]
+                  tags: ["React", "Node.js", "MongoDB", "Fintech"],
+                  github: "https://github.com/moajjem441/Payoo-App"
+                },
+
+                {
+                  title: "Mini Social Media",
+                  desc: "A Java Swing based mini social media platform featuring posts, comments, messaging, notifications, and modern UI interactions.",
+                  img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop",
+                  tags: ["Java", "Swing", "MySQL", "Desktop App"],
+                  github: "https://github.com/moajjem441/Mini_Social_Media"
                 }
               ].map((project, idx) => (
                 <TiltCard key={idx} className="project-card rounded-[40px] p-8 group cursor-pointer">
@@ -837,10 +851,17 @@ export default function Home() {
                     {project.desc}
                   </p>
                   <Magnetic>
-                    <button className="flex items-center gap-2 text-primary font-label-caps text-xs group/btn">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-primary font-label-caps text-xs group/btn"
+                    >
                       VIEW PROJECT
-                      <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
-                    </button>
+                      <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">
+                        arrow_forward
+                      </span>
+                    </a>
                   </Magnetic>
                 </TiltCard>
               ))}
@@ -920,43 +941,43 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="w-full py-20 bg-surface-container-lowest border-t border-white/5">
-  <div className="max-w-container-max mx-auto px-gutter">
-    <div className="flex flex-col md:flex-row justify-between items-center gap-12">
+        <div className="max-w-container-max mx-auto px-gutter">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-12">
 
-      <div className="w-12 h-12 rounded-full backdrop-blur-sm bg-white/10 
+            <div className="w-12 h-12 rounded-full backdrop-blur-sm bg-white/10 
           flex items-center justify-center font-bold text-white 
           border border-white/30 shadow-2xl hover:scale-110 transition-transform 
           animate-pulse-glow">
-        MH
-      </div>
+              MH
+            </div>
 
-      <div className="flex flex-wrap justify-center gap-10">
-        {[
-          { name: "GitHub", url: "https://github.com/moajjem441" },
-          { name: "LinkedIn", url: "https://www.linkedin.com/in/moajjem-hossain-" },
-          { name: "Facebook", url: "https://facebook.com/" },
-          { name: "Twitter", url: "https://x.com/NakyNaky1078618" }
-        ].map(link => (
-          <a
-            key={link.name}
-            href={link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors relative group"
-          >
-            {link.name}
-            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-300" />
-          </a>
-        ))}
-      </div>
+            <div className="flex flex-wrap justify-center gap-10">
+              {[
+                { name: "GitHub", url: "https://github.com/moajjem441" },
+                { name: "LinkedIn", url: "https://www.linkedin.com/in/moajjem-hossain-" },
+                { name: "Facebook", url: "https://facebook.com/" },
+                { name: "Twitter", url: "https://x.com/NakyNaky1078618" }
+              ].map(link => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors relative group"
+                >
+                  {link.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-300" />
+                </a>
+              ))}
+            </div>
 
-      <div className="font-body-md text-sm text-on-surface-variant opacity-60">
-        © 2026 Moajjem Hossain. Crafted with passion.
-      </div>
+            <div className="font-body-md text-sm text-on-surface-variant opacity-60">
+              © 2026 Moajjem Hossain. Crafted with passion.
+            </div>
 
-    </div>
-  </div>
-</footer>
+          </div>
+        </div>
+      </footer>
 
     </div>
   );

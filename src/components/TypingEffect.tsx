@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const titles = [
   "MERN Stack Developer",
@@ -32,8 +32,10 @@ export default function TypingEffect() {
     if (!isDeleting && displayText === currentTitle) {
       timeout = setTimeout(() => setIsDeleting(true), 2000);
     } else if (isDeleting && displayText === "") {
-      setIsDeleting(false);
-      setIndex((prev) => (prev + 1) % titles.length);
+      timeout = setTimeout(() => {
+        setIsDeleting(false);
+        setIndex((prev) => (prev + 1) % titles.length);
+      }, 100);
     }
 
     return () => clearTimeout(timeout);

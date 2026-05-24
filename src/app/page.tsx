@@ -520,7 +520,7 @@ export default function Home() {
                 </div>
 
                 <div className="hero-parallax-reverse glass-card absolute top-1/2 -right-4 md:-right-12 p-4 md:p-6 rounded-xl md:rounded-2xl z-20 w-28 md:w-44">
-                  <div className="text-primary font-display-lg-mobile text-[20px] md:text-[28px] mb-1">3.56</div>
+                  <div className="text-primary font-display-lg-mobile text-[20px] md:text-[28px] mb-1">3.58</div>
                   <div className="font-label-caps text-[8px] md:text-[10px] text-on-surface-variant tracking-widest uppercase">
                     Current CGPA
                   </div>
@@ -549,9 +549,9 @@ export default function Home() {
                 </h2>
                 <div className="space-y-12">
                   {[
-                    { year: "2022", title: "Started BUBT", desc: "Began my journey in Computer Science and Engineering." },
-                    { year: "2023", title: "MERN Mastery", desc: "Deep dived into Full Stack Development with React and Node.js." },
-                    { year: "2024", title: "Problem Solver", desc: "Achieved 690+ rating on Codeforces and 15+ real-world projects." }
+                    { year: "2023", title: "Started BUBT", desc: "Began my journey in Computer Science and Engineering." },
+                    { year: "2024", title: "Problem Solver", desc: "Achieved 690+ rating on Codeforces and 10+ real-world projects." }
+                    { year: "2025", title: "MERN Mastery", desc: "Deep dived into Full Stack Development with React and Node.js." },
                   ].map((item, idx) => (
                     <div key={idx} className="relative pl-8 border-l border-white/10 reveal-up">
                       <div className="absolute left-[-5px] top-0 w-[10px] h-[10px] rounded-full bg-primary" />

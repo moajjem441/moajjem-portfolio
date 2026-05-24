@@ -801,7 +801,7 @@ export default function Home() {
                 {
                   title: "Third Eye Assistive System",
                   desc: "An IoT-based assistive system for visually impaired users providing obstacle detection and real-time audio feedback.",
-                  img: "https://images.unsplash.com/photo-1581091870622-3d6f3d5f0f2c?q=80&w=1000&auto=format&fit=crop",
+                  img: "https://m.media-amazon.com/images/I/51kxxwhbUML.jpg",
                   tags: ["IoT", "Arduino", "Sensors", "Assistive Tech"]
                 },
                 {
@@ -861,7 +861,7 @@ export default function Home() {
               e.preventDefault();
               alert("Thanks! I will contact you soon.");
             }} 
-            
+
             >
 
               <div className="space-y-2">

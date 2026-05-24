@@ -200,7 +200,7 @@ export default function Home() {
     const stats = gsap.utils.toArray<HTMLElement>(".stat-counter");
     stats.forEach((stat) => {
       const endValue = parseInt(stat.getAttribute("data-value") || "0");
-      gsap.fromTo(stat, 
+      gsap.fromTo(stat,
         { innerText: "0" },
         {
           innerText: endValue,
@@ -283,14 +283,14 @@ export default function Home() {
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
               {navItems.map((item) => (
-                <a 
+                <a
                   key={item}
-                  className={`font-label-caps text-label-caps relative transition-colors duration-300 ${activeSection === item ? 'text-primary' : 'text-on-surface-variant hover:text-primary'}`} 
+                  className={`font-label-caps text-label-caps relative transition-colors duration-300 ${activeSection === item ? 'text-primary' : 'text-on-surface-variant hover:text-primary'}`}
                   href={`#${item}`}
                 >
                   {item.charAt(0).toUpperCase() + item.slice(1)}
                   {activeSection === item && (
-                    <motion.div 
+                    <motion.div
                       layoutId="nav-underline"
                       className="absolute -bottom-1 left-0 w-full h-[1px] bg-primary"
                     />
@@ -303,14 +303,14 @@ export default function Home() {
               {/* Theme Toggle Button */}
               <div className="relative flex items-center pointer-events-auto z-[70]">
                 <Magnetic>
-                  <button 
+                  <button
                     onClick={() => setIsThemeMenuOpen(!isThemeMenuOpen)}
                     className="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 text-on-surface transition-colors cursor-pointer pointer-events-auto relative"
                     aria-label="Toggle Theme"
                   >
                     <AnimatePresence mode="wait">
                       {theme === "dark" && (
-                        <motion.span 
+                        <motion.span
                           key="dark"
                           initial={{ scale: 0, rotate: -90 }}
                           animate={{ scale: 1, rotate: 0 }}
@@ -322,7 +322,7 @@ export default function Home() {
                         </motion.span>
                       )}
                       {theme === "light" && (
-                        <motion.span 
+                        <motion.span
                           key="light"
                           initial={{ scale: 0, rotate: -90 }}
                           animate={{ scale: 1, rotate: 0 }}
@@ -334,7 +334,7 @@ export default function Home() {
                         </motion.span>
                       )}
                       {theme === "purple" && (
-                        <motion.span 
+                        <motion.span
                           key="purple"
                           initial={{ scale: 0, rotate: -90 }}
                           animate={{ scale: 1, rotate: 0 }}
@@ -384,19 +384,19 @@ export default function Home() {
               </Magnetic>
 
               {/* Mobile Menu Toggle */}
-              <button 
+              <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 z-[60] pointer-events-auto"
               >
-                <motion.span 
+                <motion.span
                   animate={{ rotate: isMenuOpen ? 45 : 0, y: isMenuOpen ? 6 : 0 }}
                   className="w-6 h-[2px] bg-on-surface block"
                 />
-                <motion.span 
+                <motion.span
                   animate={{ opacity: isMenuOpen ? 0 : 1 }}
                   className="w-6 h-[2px] bg-on-surface block"
                 />
-                <motion.span 
+                <motion.span
                   animate={{ rotate: isMenuOpen ? -45 : 0, y: isMenuOpen ? -6 : 0 }}
                   className="w-6 h-[2px] bg-on-surface block"
                 />
@@ -416,7 +416,7 @@ export default function Home() {
             >
               <div className="flex flex-col gap-6 items-center">
                 {navItems.map((item) => (
-                  <a 
+                  <a
                     key={item}
                     onClick={() => setIsMenuOpen(false)}
                     className="font-headline-md text-2xl text-on-surface hover:text-primary transition-colors"
@@ -456,10 +456,10 @@ export default function Home() {
         {/* Hero Section */}
         <section id="hero" className="hero-section relative min-h-screen flex items-center pt-24 overflow-hidden px-gutter">
           <div className="aurora-bg" />
-          
+
           <div className="max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 relative z-10 hero-content">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
@@ -476,7 +476,7 @@ export default function Home() {
               </h1>
 
               <p className="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl reveal-up">
-                Building modern full-stack experiences with a focus on performance, security, and cinematic motion. 
+                Building modern full-stack experiences with a focus on performance, security, and cinematic motion.
                 Currently exploring the intersection of AI and Web Dev.
               </p>
 
@@ -562,12 +562,12 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              
+
               <div className="glass-card p-10 rounded-[40px] reveal-up">
                 <h3 className="text-2xl font-bold mb-6">About Moajjem</h3>
                 <p className="text-on-surface-variant leading-relaxed mb-8">
-                  I am a passionate CSE student at BUBT, dedicated to building high-performance web applications. 
-                  My expertise lies in the MERN stack, but I'm constantly pushing boundaries into AI integration and Cybersecurity. 
+                  I am a passionate CSE student at BUBT, dedicated to building high-performance web applications.
+                  My expertise lies in the MERN stack, but I'm constantly pushing boundaries into AI integration and Cybersecurity.
                   I believe code should not only function perfectly but also look beautiful and feel intuitive.
                 </p>
                 <div className="grid grid-cols-2 gap-6">
@@ -590,7 +590,7 @@ export default function Home() {
         {/* Education Section */}
         <section id="education" className="py-section-padding px-gutter relative overflow-hidden bg-surface-container-low/10">
           <div className="aurora-bg absolute opacity-30 scale-75 -left-[10%] top-[20%] pointer-events-none" />
-          
+
           <div className="max-w-container-max mx-auto relative z-10">
             <div className="text-center mb-16 reveal-up">
               <span className="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-4 block">
@@ -610,7 +610,7 @@ export default function Home() {
                 <SpotlightCard className="glass-card p-8 md:p-12 rounded-[40px] border border-primary/10 relative overflow-hidden group shadow-[0_0_50px_rgba(0,0,0,0.3)]">
                   {/* Decorative background visual */}
                   <div className="absolute right-0 top-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-500 pointer-events-none" />
-                  
+
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                     <div>
                       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 mb-4">
@@ -745,10 +745,13 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
+                { icon: "css", name: "Tailwind CSS", desc: "Modern utility-first responsive UI design." },
                 { icon: "JS", name: "JavaScript", desc: "Expert in ES6+ and asynchronous programming." },
                 { icon: "R", name: "React / Next.js", desc: "Building scalable, SEO-friendly SSR applications." },
+                { icon: "TS", name: "TypeScript", desc: "Type-safe scalable application development (basic/learning)." },
                 { icon: "database", name: "MongoDB", desc: "Architecting efficient NoSQL data structures." },
                 { icon: "terminal", name: "Node.js", desc: "Scalable backend systems and API design." },
+                { icon: "git", name: "Git & GitHub", desc: "Version control and collaborative development." },
                 { icon: "security", name: "Cybersecurity", desc: "Learning ethical hacking and secure coding." },
                 { icon: "psychology", name: "AI Integration", desc: "Implementing LLMs and smart features." }
               ].map((skill, idx) => (
@@ -819,7 +822,7 @@ export default function Home() {
                   </p>
                   <Magnetic>
                     <button className="flex items-center gap-2 text-primary font-label-caps text-xs group/btn">
-                      VIEW PROJECT 
+                      VIEW PROJECT
                       <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
                     </button>
                   </Magnetic>
@@ -840,27 +843,27 @@ export default function Home() {
                 Have a project in mind? Reach out and let's build something extraordinary.
               </p>
             </div>
-            
+
             <form className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2">
                 <label className="font-label-caps text-[10px] uppercase text-primary tracking-widest ml-1">Name</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   className="w-full bg-surface-container border border-outline-variant/30 rounded-xl px-6 py-4 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/20 transition-all text-on-surface"
                   placeholder="Your name"
                 />
               </div>
               <div className="space-y-2">
                 <label className="font-label-caps text-[10px] uppercase text-primary tracking-widest ml-1">Email</label>
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   className="w-full bg-surface-container border border-outline-variant/30 rounded-xl px-6 py-4 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/20 transition-all text-on-surface"
                   placeholder="your@email.com"
                 />
               </div>
               <div className="md:col-span-2 space-y-2">
                 <label className="font-label-caps text-[10px] uppercase text-primary tracking-widest ml-1">Message</label>
-                <textarea 
+                <textarea
                   rows={4}
                   className="w-full bg-surface-container border border-outline-variant/30 rounded-xl px-6 py-4 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/20 transition-all resize-none text-on-surface"
                   placeholder="Tell me about your project..."

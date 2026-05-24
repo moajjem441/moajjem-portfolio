@@ -276,9 +276,12 @@ export default function Home() {
         <div className="max-w-container-max mx-auto relative h-[72px] flex items-center pointer-events-auto">
           <div className="nav-bg absolute inset-0 bg-background/80 backdrop-blur-xl border-b border-white/10 shadow-sm mx-auto z-[-1]" />
           <div className="flex justify-between items-center w-full px-gutter">
-            <div className="text-body-lg font-bold tracking-tighter text-on-surface">
-              MH.
-            </div>
+            <div className="w-12 h-12 rounded-full backdrop-blur-sm bg-white/10 
+                flex items-center justify-center font-bold text-white 
+                border border-white/30 shadow-2xl hover:scale-110 transition-transform 
+                animate-pulse-glow">
+  MH
+</div>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">

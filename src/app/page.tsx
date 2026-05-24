@@ -280,8 +280,8 @@ export default function Home() {
                 flex items-center justify-center font-bold text-white 
                 border border-white/30 shadow-2xl hover:scale-110 transition-transform 
                 animate-pulse-glow">
-  MH
-</div>
+              MH
+            </div>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
@@ -552,7 +552,7 @@ export default function Home() {
                 </h2>
                 <div className="space-y-12">
                   {[
-                    { year: "2023", title: "Started BUBT", desc: "Began my journey in Computer Science and Engineering." },
+                    { year: "2022", title: "Started BUBT", desc: "Began my journey in Computer Science and Engineering." },
                     { year: "2024", title: "Problem Solver", desc: "Achieved 690+ rating on Codeforces and 10+ real-world projects." },
                     { year: "2025", title: "MERN Mastery", desc: "Deep dived into Full Stack Development with React and Node.js." }
                   ].map((item, idx) => (
@@ -863,7 +863,7 @@ export default function Home() {
             <form className="grid grid-cols-1 md:grid-cols-2 gap-8" onSubmit={(e) => {
               e.preventDefault();
               alert("Thanks! I will contact you soon.");
-            }} 
+            }}
 
             >
 
@@ -920,27 +920,44 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="w-full py-20 bg-surface-container-lowest border-t border-white/5">
-        <div className="max-w-container-max mx-auto px-gutter">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-12">
-            <div className="text-headline-md font-bold text-on-surface tracking-tighter">
-              MH.
-            </div>
+  <div className="max-w-container-max mx-auto px-gutter">
+    <div className="flex flex-col md:flex-row justify-between items-center gap-12">
 
-            <div className="flex flex-wrap justify-center gap-10">
-              {["GitHub", "LinkedIn", "Facebook", "Twitter"].map(link => (
-                <a key={link} className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors relative group" href="#">
-                  {link}
-                  <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-300" />
-                </a>
-              ))}
-            </div>
+      <div className="w-12 h-12 rounded-full backdrop-blur-sm bg-white/10 
+          flex items-center justify-center font-bold text-white 
+          border border-white/30 shadow-2xl hover:scale-110 transition-transform 
+          animate-pulse-glow">
+        MH
+      </div>
 
-            <div className="font-body-md text-sm text-on-surface-variant opacity-60">
-              © 2026 Moajjem Hossain. Crafted with passion.
-            </div>
-          </div>
-        </div>
-      </footer>
+      <div className="flex flex-wrap justify-center gap-10">
+        {[
+          { name: "GitHub", url: "https://github.com/moajjem441" },
+          { name: "LinkedIn", url: "https://www.linkedin.com/in/moajjem-hossain-" },
+          { name: "Facebook", url: "https://facebook.com/" },
+          { name: "Twitter", url: "https://x.com/NakyNaky1078618" }
+        ].map(link => (
+          <a
+            key={link.name}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors relative group"
+          >
+            {link.name}
+            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-300" />
+          </a>
+        ))}
+      </div>
+
+      <div className="font-body-md text-sm text-on-surface-variant opacity-60">
+        © 2026 Moajjem Hossain. Crafted with passion.
+      </div>
+
+    </div>
+  </div>
+</footer>
+
     </div>
   );
 }

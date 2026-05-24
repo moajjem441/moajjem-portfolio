@@ -578,7 +578,7 @@ export default function Home() {
                   </div>
                   <div className="p-6 rounded-2xl bg-surface-container border border-outline-variant/30">
                     <span className="material-symbols-outlined text-primary mb-2">terminal</span>
-                    <h4 className="font-bold">500+</h4>
+                    <h4 className="font-bold">200+</h4>
                     <p className="text-xs text-on-surface-variant">Problems Solved</p>
                   </div>
                 </div>
@@ -638,7 +638,7 @@ export default function Home() {
                       <p className="font-label-caps text-[9px] text-on-surface-variant tracking-wider uppercase mb-1">Current Grade</p>
                       <div className="flex items-center gap-1.5">
                         <span className="material-symbols-outlined text-primary text-sm">grade</span>
-                        <span className="font-mono text-sm font-semibold text-on-surface">CGPA 3.56 / 4.00</span>
+                        <span className="font-mono text-sm font-semibold text-on-surface">CGPA 3.58 / 4.00</span>
                       </div>
                     </div>
                     <div className="col-span-2 sm:col-span-1">
@@ -687,17 +687,17 @@ export default function Home() {
                 {[
                   {
                     type: "Higher Secondary Certificate (HSC)",
-                    institution: "Cantonment Public School and College",
-                    year: "2020",
+                    institution: "Chowmohuni Govt SA  College",
+                    year: "2021",
                     result: "GPA 5.00 / 5.00",
                     field: "Science Group",
                     icon: "menu_book"
                   },
                   {
                     type: "Secondary School Certificate (SSC)",
-                    institution: "Cantonment Public School and College",
-                    year: "2018",
-                    result: "GPA 5.00 / 5.00",
+                    institution: "Noakhali Zilla School",
+                    year: "2019",
+                    result: "GPA 4.78 / 5.00",
                     field: "Science Group",
                     icon: "history_edu"
                   }

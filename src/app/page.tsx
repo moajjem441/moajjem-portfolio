@@ -8,6 +8,8 @@ import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "fra
 import TypingEffect from "@/components/TypingEffect";
 import Magnetic from "@/components/Magnetic";
 
+import Link from "next/link";
+
 gsap.registerPlugin(ScrollTrigger);
 
 // --- Sub-components for better organization ---
@@ -1003,166 +1005,161 @@ export default function Home() {
 
         {/* Projects */}
         <section id="projects" className="py-section-padding px-gutter">
-          <div className="max-w-container-max mx-auto">
-            <div className="text-center mb-16 reveal-up">
-              <h2 className="font-headline-md text-headline-md text-on-surface mb-4">
-                Featured Projects
-              </h2>
-              <p className="font-body-lg text-on-surface-variant max-w-2xl mx-auto">
-                A selection of work that defines my engineering style.
-              </p>
-            </div>
+  <div className="max-w-container-max mx-auto">
+    <div className="text-center mb-16 reveal-up">
+      <h2 className="font-headline-md text-headline-md text-on-surface mb-4">
+        Featured Projects
+      </h2>
+      <p className="font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+        A selection of work that defines my engineering style.
+      </p>
+    </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {[
-                {
-                  title: "SkillHub",
-                  desc: "A production-grade AI-powered EdTech platform with secure authentication, personalized course recommendations, Stripe payments, and intelligent course management.",
-                  img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
-                  tags: [
-                    "Next.js",
-                    "TypeScript",
-                    "Express.js",
-                    "MongoDB",
-                    "Better Auth",
-                    "JWT",
-                    "Stripe",
-                    "Groq AI"
-                  ],
-                  github: "https://github.com/moajjem441/SkillHub",
-                  live: "https://skillhub-ivory.vercel.app"
-                },
-                {
-                  title: "Online Ticket Booking Platform",
-                  desc: "A full-stack ticket booking platform with secure authentication, role-based dashboards, online booking, and payment integration.",
-                  img: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=1000&auto=format&fit=crop",
-                  tags: [
-                    "Next.js",
-                    "TypeScript",
-                    "Node.js",
-                    "Express.js",
-                    "MongoDB",
-                    "JWT",
-                    "Stripe"
-                  ],
-                  github: "https://github.com/moajjem441/online-ticket-booking-platform",
-                  live: "https://online-ticket-booking-platform-eight.vercel.app"
-                },
-                {
-                  title: "IdeaVault",
-                  desc: "A full-stack startup idea sharing platform where users can publish innovative ideas, engage in discussions, and discover inspiring projects through a modern social experience.",
-                  img: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80",
-                  tags: [
-                    "Next.js",
-                    "React",
-                    "Tailwind CSS",
-                    "Node.js",
-                    "Express.js",
-                    "MongoDB"
-                  ],
-                  github: "https://github.com/moajjem441/ideavault-client-site",
-                  live: "https://ideavault-tau-gray.vercel.app/"
-                },
-                {
-                  title: "SkillSphere",
-                  desc: "A modern online learning platform where users can discover, search, and enroll in skill-based courses with secure authentication and protected learning experiences.",
-                  img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
-                  tags: [
-                    "Next.js",
-                    "React",
-                    "Tailwind CSS",
-                    "Better Auth",
-                    "HeroUI",
-                    "DaisyUI"
-                  ],
-                  github: "https://github.com/moajjem441/Skill-Sphere",
-                  live: "https://skill-sphere-taupe.vercel.app"
-                },
-
-                {
-                  title: "Mind Refreshment App",
-                  desc: "A mental wellness application designed to help users track mood, relax, and improve mental well-being using interactive features.",
-                  img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1000&auto=format&fit=crop",
-                  tags: ["React", "Node.js", "MongoDB", "Mental Health"],
-                  github: "https://github.com/moajjem441/Mind_Refreshment_App_-Sem-6-"
-                },
-
-                {
-                  title: "Third Eye Assistive System",
-                  desc: "An IoT-based assistive system for visually impaired users providing obstacle detection and real-time audio feedback.",
-                  img: "https://m.media-amazon.com/images/I/51kxxwhbUML.jpg",
-                  tags: ["IoT", "Arduino", "Sensors", "Assistive Tech"],
-                  github: "https://github.com/moajjem441/third-eye-assistive-system"
-                },
-
-                {
-                  title: "Liver Disease Stage Prediction",
-                  desc: "A machine learning project focused on predictive modeling for liver disease stage detection using data analysis and ML algorithms.",
-                  img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop",
-                  tags: ["Machine Learning", "Python", "Data Analysis", "Healthcare AI"],
-                  github: "https://github.com/moajjem441/Predictive-Modeling-for-Liver-Disease-Stages-using-ML"
-                }
-              ].map((project, idx) => (
-                <TiltCard key={idx} className="project-card rounded-[40px] p-8 group cursor-pointer">
-                  <div className="aspect-[16/9] rounded-3xl overflow-hidden mb-8 border border-white/5 bg-surface-container-high/50 relative">
-                    <img
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      src={project.img}
-                      alt={project.title}
-                    />
-                    <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  </div>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map(tag => (
-                      <span key={tag} className="px-3 py-1 bg-white/5 rounded-full text-[10px] font-label-caps text-primary uppercase border border-white/10">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <h3 className="text-2xl font-bold text-on-surface mb-4 group-hover:text-primary transition-colors duration-300">
-                    {project.title}
-                  </h3>
-                  <p className="text-on-surface-variant mb-6 leading-relaxed">
-                    {project.desc}
-                  </p>
-                  <div className="flex items-center gap-4">
-                    {/* GitHub Button */}
-                    <Magnetic>
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-primary font-label-caps text-xs group/btn"
-                      >
-                        GITHUB
-                        <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">
-                          arrow_forward
-                        </span>
-                      </a>
-                    </Magnetic>
-
-                    {/* Live Demo Button */}
-                    {project.live && (
-                      <Magnetic>
-                        <a
-                          href={project.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-on-surface font-label-caps text-xs group/btn"
-                        >
-                          LIVE DEMO
-                          <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">
-                            open_in_new
-                          </span>
-                        </a>
-                      </Magnetic>
-                    )}
-                  </div>
-                </TiltCard>
-              ))}
-            </div>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      {[
+        {
+          title: "SkillHub",
+          desc: "A production-grade AI-powered EdTech platform with secure authentication, personalized course recommendations, Stripe payments, and intelligent course management.",
+          img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+          tags: [
+            "Next.js",
+            "TypeScript",
+            "Express.js",
+            "MongoDB",
+            "Better Auth",
+            "JWT",
+            "Stripe",
+            "Groq AI"
+          ],
+          href: "/skillhub",        // ✅ যোগ করা হয়েছে
+          github: "https://github.com/moajjem441/SkillHub",
+          live: "https://skillhub-ivory.vercel.app"
+        },
+        {
+          title: "Online Ticket Booking Platform",
+          desc: "A full-stack ticket booking platform with secure authentication, role-based dashboards, online booking, and payment integration.",
+          img: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=1000&auto=format&fit=crop",
+          tags: [
+            "Next.js",
+            "TypeScript",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "JWT",
+            "Stripe"
+          ],
+          href: "/ticket-booking",   // ✅ নতুন
+          github: "https://github.com/moajjem441/online-ticket-booking-platform",
+          live: "https://online-ticket-booking-platform-eight.vercel.app"
+        },
+        {
+          title: "IdeaVault",
+          desc: "A full-stack startup idea sharing platform where users can publish innovative ideas, engage in discussions, and discover inspiring projects through a modern social experience.",
+          img: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80",
+          tags: [
+            "Next.js",
+            "React",
+            "Tailwind CSS",
+            "Node.js",
+            "Express.js",
+            "MongoDB"
+          ],
+          href: "/ideavault",       // ✅ নতুন
+          github: "https://github.com/moajjem441/ideavault-client-site",
+          live: "https://ideavault-tau-gray.vercel.app/"
+        },
+        {
+          title: "SkillSphere",
+          desc: "A modern online learning platform where users can discover, search, and enroll in skill-based courses with secure authentication and protected learning experiences.",
+          img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+          tags: [
+            "Next.js",
+            "React",
+            "Tailwind CSS",
+            "Better Auth",
+            "HeroUI",
+            "DaisyUI"
+          ],
+          href: "/skillsphere",     // ✅ নতুন
+          github: "https://github.com/moajjem441/Skill-Sphere",
+          live: "https://skill-sphere-taupe.vercel.app"
+        },
+        {
+          title: "Mind Refreshment App",
+          desc: "A mental wellness application designed to help users track mood, relax, and improve mental well-being using interactive features.",
+          img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1000&auto=format&fit=crop",
+          tags: ["React", "Node.js", "MongoDB", "Mental Health"],
+          href: "/mind-refreshment", // ✅ নতুন
+          github: "https://github.com/moajjem441/Mind_Refreshment_App_-Sem-6-",
+          live: ""  // খালি রাখুন (Live Demo নেই)
+        },
+        {
+          title: "Third Eye Assistive System",
+          desc: "An IoT-based assistive system for visually impaired users providing obstacle detection and real-time audio feedback.",
+          img: "https://m.media-amazon.com/images/I/51kxxwhbUML.jpg",
+          tags: ["IoT", "Arduino", "Sensors", "Assistive Tech"],
+          href: "/third-eye",       // ✅ নতুন
+          github: "https://github.com/moajjem441/third-eye-assistive-system",
+          live: ""
+        },
+        {
+          title: "Liver Disease Stage Prediction",
+          desc: "A machine learning project focused on predictive modeling for liver disease stage detection using data analysis and ML algorithms.",
+          img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop",
+          tags: ["Machine Learning", "Python", "Data Analysis", "Healthcare AI"],
+          href: "/liver-prediction", // ✅ নতুন
+          github: "https://github.com/moajjem441/Predictive-Modeling-for-Liver-Disease-Stages-using-ML",
+          live: ""
+        }
+      ].map((project, idx) => (
+        <TiltCard key={idx} className="project-card rounded-[40px] p-8 group cursor-pointer">
+          <div className="aspect-[16/9] rounded-3xl overflow-hidden mb-8 border border-white/5 bg-surface-container-high/50 relative">
+            <img
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              src={project.img}
+              alt={project.title}
+            />
+            <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </div>
-        </section>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.tags.map(tag => (
+              <span key={tag} className="px-3 py-1 bg-white/5 rounded-full text-[10px] font-label-caps text-primary uppercase border border-white/10">
+                {tag}
+              </span>
+            ))}
+          </div>
+          <h3 className="text-2xl font-bold text-on-surface mb-4 group-hover:text-primary transition-colors duration-300">
+            {project.title}
+          </h3>
+          <p className="text-on-surface-variant mb-6 leading-relaxed">
+            {project.desc}
+          </p>
+
+          {/* বাটন গ্রুপ */}
+          <div className="flex flex-wrap items-center gap-4">
+            {/* VIEW DETAILS (সব প্রোজেক্টের জন্য) */}
+            <Link href={project.href}>
+              <Magnetic>
+                <span className="flex items-center gap-2 text-primary font-label-caps text-xs group/btn cursor-pointer border border-primary/30 px-4 py-2 rounded-full hover:bg-primary/10 transition-all duration-300">
+                  VIEW DETAILS
+                  <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">
+                    arrow_forward
+                  </span>
+                </span>
+              </Magnetic>
+            </Link>
+
+           
+          </div>
+        </TiltCard>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
+
 
         {/* Contact */}
         <section id="contact" className="py-section-padding px-gutter relative overflow-hidden">

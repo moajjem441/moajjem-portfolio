@@ -553,21 +553,31 @@ export default function Home() {
               </p>
 
               <div className="flex flex-wrap gap-4 reveal-up">
-                <Magnetic>
-                  <button className="bg-primary-container text-on-primary-container px-8 py-4 rounded-xl font-label-caps text-label-caps primary-glow hover:bg-primary/90 transition-all duration-300">
-                    Download Resume
-                  </button>
-                </Magnetic>
-
+                {/* View Resume */}
                 <Magnetic>
                   <a
-                    href="#projects"
-                    className="border border-outline-variant text-on-surface px-8 py-4 rounded-xl font-label-caps text-label-caps hover:bg-white/5 transition-all duration-300 inline-block"
+                    href="/resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white/10 text-on-surface px-8 py-4 rounded-xl font-label-caps text-label-caps hover:bg-white/20 transition-all duration-300 inline-block border border-white/10"
                   >
-                    View Projects
+                    View Resume
+                  </a>
+                </Magnetic>
+
+                {/* Download Resume */}
+                <Magnetic>
+                  <a
+                    href="/resume.pdf"
+                    download="Moajjem_Hossain_Resume.pdf"
+                    className="bg-primary-container text-on-primary-container px-8 py-4 rounded-xl font-label-caps text-label-caps primary-glow hover:bg-primary/90 transition-all duration-300 inline-block"
+                  >
+                    Download Resume
                   </a>
                 </Magnetic>
               </div>
+
+
             </div>
 
             {/* Hero Image Container */}
@@ -615,7 +625,7 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-section-padding px-gutter relative">
+        {/* <section id="about" className="py-section-padding px-gutter relative">
           <div className="max-w-container-max mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
               <div>
@@ -658,6 +668,90 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section> */}
+
+        <section id="about" className="py-section-padding px-gutter relative">
+          <div className="max-w-container-max mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+
+              {/* Left Side: Timeline (unchanged) */}
+              <div>
+                <h2 className="font-headline-md text-headline-md text-on-surface mb-8 reveal-up">
+                  The Journey So Far
+                </h2>
+                <div className="space-y-12">
+                  {[
+                    { year: "2022", title: "Started BUBT", desc: "Began my journey in Computer Science and Engineering." },
+                    { year: "2024", title: "Problem Solver", desc: "Achieved 690+ rating on Codeforces and 10+ real-world projects." },
+                    { year: "2025", title: "MERN Mastery", desc: "Deep dived into Full Stack Development with React and Node.js." }
+                  ].map((item, idx) => (
+                    <div key={idx} className="relative pl-8 border-l border-white/10 reveal-up">
+                      <div className="absolute left-[-5px] top-0 w-[10px] h-[10px] rounded-full bg-primary" />
+                      <span className="font-label-caps text-primary mb-2 block">{item.year}</span>
+                      <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                      <p className="text-on-surface-variant">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Side: About Card + Hobbies (UPDATED) */}
+              <div className="glass-card p-10 rounded-[40px] reveal-up">
+                <h3 className="text-2xl font-bold mb-6">About Moajjem</h3>
+
+                {/* Professional Introduction */}
+                <p className="text-on-surface-variant leading-relaxed mb-6">
+                  I am a passionate CSE student at BUBT, dedicated to building high-performance web applications.
+                  My expertise lies in the MERN stack, but I'm constantly pushing boundaries into AI integration and Cybersecurity.
+                  I believe code should not only function perfectly but also look beautiful and feel intuitive.
+                </p>
+
+                {/* 🆕 NEW: Hobbies & Interests Section */}
+                <div className="mb-8 p-5 rounded-2xl bg-surface-container/50 border border-outline-variant/20">
+                  <h4 className="font-label-caps text-[10px] uppercase text-primary tracking-widest mb-3 flex items-center gap-2">
+                    <span className="material-symbols-outlined text-sm">favorite</span>
+                    Beyond the Screen
+                  </h4>
+                  <p className="text-on-surface-variant text-sm leading-relaxed mb-4">
+                    When I'm not immersed in code, I love to unwind by playing <strong className="text-on-surface">football</strong> and
+                    <strong className="text-on-surface"> badminton</strong>. I'm an avid
+                    <strong className="text-on-surface"> tech-podcast</strong> listener and enjoy diving into
+                    <strong className="text-on-surface"> sci-fi novels</strong> to keep my imagination as sharp as my logic.
+                  </p>
+                  {/* Hobby Icons */}
+                  <div className="flex flex-wrap gap-4">
+                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs">
+                      <span className="material-symbols-outlined text-primary text-sm">sports_soccer</span> Football
+                    </span>
+                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs">
+                      <span className="material-symbols-outlined text-primary text-sm">sports_tennis</span> Badminton
+                    </span>
+                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs">
+                      <span className="material-symbols-outlined text-primary text-sm">podcasts</span> Podcasts
+                    </span>
+                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs">
+                      <span className="material-symbols-outlined text-primary text-sm">menu_book</span> Reading
+                    </span>
+                  </div>
+                </div>
+
+                {/* Stats (unchanged) */}
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="p-6 rounded-2xl bg-surface-container border border-outline-variant/30">
+                    <span className="material-symbols-outlined text-primary mb-2">code</span>
+                    <h4 className="font-bold">10k+</h4>
+                    <p className="text-xs text-on-surface-variant">Lines of Code</p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-surface-container border border-outline-variant/30">
+                    <span className="material-symbols-outlined text-primary mb-2">terminal</span>
+                    <h4 className="font-bold">200+</h4>
+                    <p className="text-xs text-on-surface-variant">Problems Solved</p>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>

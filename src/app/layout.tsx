@@ -35,7 +35,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" 
         />
       </head>
-      <body className="bg-background text-on-surface antialiased selection:bg-primary selection:text-on-primary">
+      <body className="bg-background text-on-surface antialiased selection:bg-primary selection:text-on-primary" suppressHydrationWarning>
         <div className="noise-overlay" />
         <ScrollProgress />
         <CustomCursor />

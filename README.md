@@ -1,141 +1,207 @@
-Moajjem Hossain — Personal Portfolio
-A modern, high-performance developer portfolio built with Next.js, React, TypeScript, Tailwind CSS, GSAP, Framer Motion, and more. Designed to showcase engineering excellence, interactive UI, and a cinematic user experience.
+# 🚀 Moajjem Hossain — Personal Portfolio
 
-🔗 Live Demo
-📧 Contact Me
+A modern, high-performance developer portfolio built with **Next.js**, **React**, **TypeScript**, **Tailwind CSS**, **GSAP**, and **Framer Motion**.
 
-✨ Features
-🌗 Dynamic Theme Switching — Dark, Light, and Purple modes with persistent state via localStorage
+Designed to showcase engineering excellence, interactive user experiences, and modern web development through cinematic animations and premium UI design.
 
-💨 GSAP + ScrollTrigger — Smooth scroll animations, staggered reveals, and parallax effects
+---
 
-🎯 Interactive UI Components — Magnetic hover buttons, tilt cards, spotlight cards, typing effect
+## 🌐 Live Demo
 
-📱 Fully Responsive — Optimized for mobile, tablet, and desktop screens
+🔗 **Live Website:** https://moajjem-portfolio.vercel.app
 
-🧠 Contact Form — Functional email form with /api/contact route and real-time status feedback
+📧 **Contact:** [moajjem441@gmail.com](mailto:moajjem441@gmail.com)
 
-⚡ Performance Optimized — Lazy loading, optimized images, and efficient animations
+---
 
-🎨 Modern Design System — Consistent typography, spacing, and color tokens
+# ✨ Features
 
-🛠 Tech Stack
-Category	Technologies
-Framework	Next.js 14 (App Router) • React 18
-Language	TypeScript
-Styling	Tailwind CSS • CSS Modules
-Animations	GSAP (with ScrollTrigger) • Framer Motion • Motion • useSpring / useTransform
-UI Components	Custom: TypingEffect • Magnetic • SpotlightCard • TiltCard
-Icons	Material Symbols (Google Fonts)
-State Management	React Hooks (useState, useEffect, useRef, useReducer)
-Form Handling	Native HTML forms • Fetch API
-Deployment	Vercel
-📁 Project Structure
-text
+* 🌗 **Dynamic Theme Switching** — Dark, Light, and Purple themes with persistent preferences.
+* 💨 **GSAP + ScrollTrigger Animations** — Smooth scrolling, staggered reveals, and parallax effects.
+* 🎯 **Interactive Components** — Magnetic buttons, Tilt Cards, Spotlight Cards, and Typing Effect.
+* 📱 **Fully Responsive** — Optimized for desktop, tablet, and mobile devices.
+* 🧠 **Contact Form API** — Functional contact form powered by the `/api/contact` route.
+* ⚡ **Performance Optimized** — Lazy loading, optimized assets, and efficient rendering.
+* 🎨 **Modern Design System** — Consistent typography, spacing, color tokens, and reusable UI components.
+
+---
+
+# 🛠 Tech Stack
+
+| Category             | Technologies                                    |
+| -------------------- | ----------------------------------------------- |
+| **Framework**        | Next.js (App Router), React                     |
+| **Language**         | TypeScript                                      |
+| **Styling**          | Tailwind CSS, CSS Modules                       |
+| **Animations**       | GSAP, ScrollTrigger, Framer Motion              |
+| **UI Components**    | TypingEffect, Magnetic, SpotlightCard, TiltCard |
+| **Icons**            | Material Symbols                                |
+| **State Management** | React Hooks                                     |
+| **Form Handling**    | Native Forms, Fetch API                         |
+| **Deployment**       | Vercel                                          |
+
+---
+
+# 📁 Project Structure
+
+```text
 portfolio/
 ├── app/
 │   ├── api/
 │   │   └── contact/
-│   │       └── route.ts           # Email API endpoint
-│   ├── globals.css               # Global styles + theme variables
-│   ├── layout.tsx                # Root layout
-│   └── page.tsx                  # Main Home component
+│   │       └── route.ts
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+│
 ├── components/
-│   ├── TypingEffect.tsx          # Typewriter animation
-│   └── Magnetic.tsx              # Magnetic hover effect
+│   ├── TypingEffect.tsx
+│   └── Magnetic.tsx
+│
 ├── public/
-│   ├── moajjem.jpg               # Profile image
+│   ├── moajjem.jpg
 │   └── favicon.ico
-├── .env.local                    # Environment variables
+│
+├── .env.local
 ├── tailwind.config.js
 ├── tsconfig.json
 ├── package.json
 └── README.md
-🚀 Getting Started
-1️⃣ Clone the Repository
-bash
+```
+
+---
+
+# 🚀 Getting Started
+
+## 1️⃣ Clone the Repository
+
+```bash
 git clone https://github.com/moajjem441/portfolio.git
 cd portfolio
-2️⃣ Install Dependencies
-bash
-npm install
-# or
-yarn install
-# or
-pnpm install
-3️⃣ Set Up Environment Variables
-Create a .env.local file in the root directory and add your email service credentials:
+```
 
-env
-# Example for EmailJS or Resend
+---
+
+## 2️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## 3️⃣ Configure Environment Variables
+
+Create a `.env.local` file in the project root.
+
+```env
+# EmailJS
 NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
 NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
 NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
 
-# OR if using Resend
+# OR Resend
 RESEND_API_KEY=your_resend_api_key
 CONTACT_EMAIL=your_email@example.com
-4️⃣ Run the Development Server
-bash
+```
+
+---
+
+## 4️⃣ Start Development Server
+
+```bash
 npm run dev
-Open http://localhost:3000 to see the result.
+```
 
-🧩 Key Components
-TypingEffect
-A typewriter component that cycles through roles like Full Stack Developer, AI Enthusiast, and Problem Solver.
+Open:
 
-Magnetic
-Wraps buttons and interactive elements, adding a magnetic hover effect powered by framer-motion and useSpring.
+```text
+http://localhost:3000
+```
 
-SpotlightCard
-A card that reveals a radial gradient spotlight on mouse hover, enhancing visual depth.
+---
 
-TiltCard
-A 3D tilt card that responds to mouse movement with smooth spring-based rotations.
+# 🧩 Core Components
 
-🎨 Theme System
-The portfolio supports three themes:
+## ⌨️ TypingEffect
 
-🌑 Dark — Default, sleek dark background with subtle contrast.
+Animated typewriter component that cycles through developer roles.
 
-☀️ Light — Clean light mode for readability.
+---
 
-🟣 Purple — Vibrant purple accent theme.
+## 🧲 Magnetic
 
-Themes are persisted in localStorage and applied by adding the theme class to the root <html> element.
+Adds smooth magnetic hover interactions to buttons and links using Framer Motion.
 
-🌐 Deployment
-Deploy on Vercel
-https://vercel.com/button
+---
 
-Or manually:
+## 💡 SpotlightCard
 
-bash
+Interactive card with a radial spotlight effect following the cursor.
+
+---
+
+## 🎴 TiltCard
+
+3D animated card with spring-based mouse movement interaction.
+
+---
+
+# 🎨 Theme System
+
+Three built-in themes are available:
+
+* 🌑 Dark
+* ☀️ Light
+* 🟣 Purple
+
+The selected theme is automatically saved in **localStorage** and restored on future visits.
+
+---
+
+# 🌐 Deployment
+
+Deploy instantly on **Vercel**.
+
+```bash
 npm run build
 npm run start
-📬 Contact
-Email: moajjem441@gmail.com
+```
 
-GitHub: github.com/moajjem441
+---
 
-LinkedIn: linkedin.com/in/moajjem-hossain
+# 📬 Connect With Me
 
-Twitter: @NakyNaky1078618
+* 📧 **Email:** [moajjem441@gmail.com](mailto:moajjem441@gmail.com)
+* 💻 **GitHub:** https://github.com/moajjem441
+* 💼 **LinkedIn:** https://linkedin.com/in/moajjem-hossain
+* 🐦 **Twitter (X):** https://x.com/NakyNaky1078618
+* 📘 **Facebook:** https://facebook.com/moajjem
 
-Facebook: facebook.com/moajjem
+---
 
-📄 License
-This project is open source and available under the MIT License.
+# 📄 License
 
-🙏 Acknowledgements
-GSAP for scroll-driven animations
+This project is licensed under the **MIT License**.
 
-Framer Motion for fluid UI interactions
+---
 
-Tailwind CSS for utility-first styling
+# 🙏 Acknowledgements
 
-Material Symbols for beautiful icons
+Special thanks to:
 
-Vercel for seamless deployment
+* 💚 GSAP
+* 💙 Framer Motion
+* 💨 Tailwind CSS
+* 🎨 Material Symbols
+* ▲ Vercel
 
-Built with ❤️ and gratitude to Allah.
+---
+
+<div align="center">
+
+### ⭐ If you like this project, consider giving it a star!
+
+**Built with ❤️ by Moajjem Hossain**
+
+</div>

@@ -827,7 +827,7 @@ export default function Home() {
                       {[
                         "Specialized in Software Engineering principles, database design, and algorithmic analysis.",
                         "Maintained continuous academic excellence with a top-tier CGPA of 3.59.",
-                        "Bridged the gap between theory and practice by building 15+ complex MERN stack and desktop applications."
+                        "Bridged the gap between theory and practice by building 10+ complex MERN stack and desktop applications."
                       ].map((highlight, index) => (
                         <li key={index} className="flex gap-3 items-start">
                           <span className="material-symbols-outlined text-primary text-md mt-0.5 select-none">verified</span>

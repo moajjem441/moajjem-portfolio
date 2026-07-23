@@ -111,5 +111,6 @@ export default function TicketBookingPage() {
         </div>
       </div>
     </section>
+    
   );
 }

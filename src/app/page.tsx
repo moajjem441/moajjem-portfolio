@@ -599,7 +599,7 @@ export default function Home() {
                 {/* Floating Cards */}
                 <div className="hero-parallax-reverse glass-card absolute -top-4 -left-4 md:-top-10 md:-left-12 p-4 md:p-6 rounded-xl md:rounded-2xl z-20 w-32 md:w-48">
                   <div className="text-primary font-display-lg-mobile text-[20px] md:text-[28px] mb-1">
-                    <span className="stat-counter" data-value="10">0</span>+
+                    <span className="stat-counter" data-value="15">0</span>+
                   </div>
                   <div className="font-label-caps text-[8px] md:text-[10px] text-on-surface-variant tracking-widest uppercase">
                     Projects Built
@@ -627,52 +627,7 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        {/* <section id="about" className="py-section-padding px-gutter relative">
-          <div className="max-w-container-max mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-              <div>
-                <h2 className="font-headline-md text-headline-md text-on-surface mb-8 reveal-up">
-                  The Journey So Far
-                </h2>
-                <div className="space-y-12">
-                  {[
-                    { year: "2022", title: "Started BUBT", desc: "Began my journey in Computer Science and Engineering." },
-                    { year: "2024", title: "Problem Solver", desc: "Achieved 690+ rating on Codeforces and 10+ real-world projects." },
-                    { year: "2025", title: "MERN Mastery", desc: "Deep dived into Full Stack Development with React and Node.js." }
-                  ].map((item, idx) => (
-                    <div key={idx} className="relative pl-8 border-l border-white/10 reveal-up">
-                      <div className="absolute left-[-5px] top-0 w-[10px] h-[10px] rounded-full bg-primary" />
-                      <span className="font-label-caps text-primary mb-2 block">{item.year}</span>
-                      <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                      <p className="text-on-surface-variant">{item.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="glass-card p-10 rounded-[40px] reveal-up">
-                <h3 className="text-2xl font-bold mb-6">About Moajjem</h3>
-                <p className="text-on-surface-variant leading-relaxed mb-8">
-                  I am a passionate CSE student at BUBT, dedicated to building high-performance web applications.
-                  My expertise lies in the MERN stack, but I'm constantly pushing boundaries into AI integration and Cybersecurity.
-                  I believe code should not only function perfectly but also look beautiful and feel intuitive.
-                </p>
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="p-6 rounded-2xl bg-surface-container border border-outline-variant/30">
-                    <span className="material-symbols-outlined text-primary mb-2">code</span>
-                    <h4 className="font-bold">10k+</h4>
-                    <p className="text-xs text-on-surface-variant">Lines of Code</p>
-                  </div>
-                  <div className="p-6 rounded-2xl bg-surface-container border border-outline-variant/30">
-                    <span className="material-symbols-outlined text-primary mb-2">terminal</span>
-                    <h4 className="font-bold">200+</h4>
-                    <p className="text-xs text-on-surface-variant">Problems Solved</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
+       
 
         <section id="about" className="py-section-padding px-gutter relative">
           <div className="max-w-container-max mx-auto">
@@ -686,7 +641,7 @@ export default function Home() {
                 <div className="space-y-12">
                   {[
                     { year: "2022", title: "Started BUBT", desc: "Began my journey in Computer Science and Engineering." },
-                    { year: "2024", title: "Problem Solver", desc: "Achieved 690+ rating on Codeforces and 10+ real-world projects." },
+                    { year: "2024", title: "Problem Solver", desc: "Achieved 690+ rating on Codeforces and 15+ real-world projects." },
                     { year: "2025", title: "MERN Mastery", desc: "Deep dived into Full Stack Development with React and Node.js." }
                   ].map((item, idx) => (
                     <div key={idx} className="relative pl-8 border-l border-white/10 reveal-up">
@@ -827,7 +782,7 @@ export default function Home() {
                       {[
                         "Specialized in Software Engineering principles, database design, and algorithmic analysis.",
                         "Maintained continuous academic excellence with a top-tier CGPA of 3.59.",
-                        "Bridged the gap between theory and practice by building 10+ complex MERN stack and desktop applications."
+                        "Bridged the gap between theory and practice by building 15+ complex MERN stack and desktop applications."
                       ].map((highlight, index) => (
                         <li key={index} className="flex gap-3 items-start">
                           <span className="material-symbols-outlined text-primary text-md mt-0.5 select-none">verified</span>

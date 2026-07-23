@@ -46,26 +46,26 @@ Designed to showcase engineering excellence, interactive user experiences, and m
 
 ```text
 portfolio/
-├── app/
-│   ├── api/
-│   │   └── contact/
-│   │       └── route.ts
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx
-│
-├── components/
-│   ├── TypingEffect.tsx
-│   └── Magnetic.tsx
-│
-├── public/
-│   ├── moajjem.jpg
-│   └── favicon.ico
-│
-├── .env.local
-├── tailwind.config.js
-├── tsconfig.json
+├── src/
+│ ├── app/
+│ │ ├── api/
+│ │ │ └── contact/
+│ │ │ └── route.ts # Email sending endpoint
+│ │ ├── favicon.ico
+│ │ ├── globals.css # Global styles + theme variables
+│ │ ├── layout.tsx # Root layout
+│ │ └── page.tsx # Main homepage component
+│ └── components/
+│ ├── TypingEffect.tsx # Typewriter animation
+│ └── Magnetic.tsx # Magnetic hover effect
+├── public/ # Static assets (images, etc.)
+├── .env.local # ⚠️ Environment variables (never commit!)
+├── .env.example # Example env file (safe to commit)
+├── .gitignore
 ├── package.json
+├── tsconfig.json
+├── tailwind.config.js
+├── next.config.ts
 └── README.md
 ```
 

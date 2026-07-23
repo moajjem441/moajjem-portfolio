@@ -115,5 +115,6 @@ export default function SkillHubPage() {
         </div>
       </div>
     </section>
+    
   );
 }

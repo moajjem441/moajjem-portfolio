@@ -103,5 +103,6 @@ export default function SkillSpherePage() {
         </div>
       </div>
     </section>
+    
   );
 }

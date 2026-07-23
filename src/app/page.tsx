@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -268,6 +268,64 @@ export default function Home() {
   }, { scope: container });
 
   const navItems = ["about", "education", "skills", "projects", "contact"];
+  const [contactStatus, setContactStatus] = useState({
+    type: "idle" as "idle" | "success" | "error",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleContactSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      name: String(formData.get("name") || "").trim(),
+      email: String(formData.get("email") || "").trim(),
+      message: String(formData.get("message") || "").trim(),
+    };
+
+    if (!payload.name || !payload.email || !payload.message) {
+      setContactStatus({
+        type: "error",
+        message: "Please complete all fields before sending your message.",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setContactStatus({ type: "idle", message: "" });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = (await response.json().catch(() => ({}))) as {
+        error?: string;
+      };
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send email");
+      }
+
+      form.reset();
+      setContactStatus({
+        type: "success",
+        message: "Thanks for reaching out! Your message has been sent.",
+      });
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "Failed to send email";
+      setContactStatus({ type: "error", message });
+      console.error("Contact form submission failed", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div ref={container} className="relative">
@@ -381,7 +439,15 @@ export default function Home() {
               </div>
 
               <Magnetic>
-                <button className="hidden sm:block bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-caps text-label-caps hover:bg-primary/90 transition-all duration-300">
+                <button
+                  onClick={() => {
+                    document.getElementById("contact")?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }}
+                  className="hidden sm:block bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-caps text-label-caps hover:bg-primary/90 transition-all duration-300"
+                >
                   Hire Me
                 </button>
               </Magnetic>
@@ -446,9 +512,12 @@ export default function Home() {
                   ))}
                 </div>
 
-                <button className="w-full bg-primary-container text-on-primary-container py-4 rounded-xl font-label-caps text-label-caps">
-                  Hire Me
-                </button>
+                <a href="#contact">
+                  <button className="w-full bg-primary-container text-on-primary-container py-4 rounded-xl font-label-caps text-label-caps">
+                    Hire Me
+                  </button>
+                </a>
+
               </div>
             </motion.div>
           )}
@@ -526,7 +595,7 @@ export default function Home() {
                 </div>
 
                 <div className="hero-parallax-reverse glass-card absolute top-1/2 -right-4 md:-right-12 p-4 md:p-6 rounded-xl md:rounded-2xl z-20 w-28 md:w-44">
-                  <div className="text-primary font-display-lg-mobile text-[20px] md:text-[28px] mb-1">3.58</div>
+                  <div className="text-primary font-display-lg-mobile text-[20px] md:text-[28px] mb-1">3.59</div>
                   <div className="font-label-caps text-[8px] md:text-[10px] text-on-surface-variant tracking-widest uppercase">
                     Current CGPA
                   </div>
@@ -644,7 +713,7 @@ export default function Home() {
                       <p className="font-label-caps text-[9px] text-on-surface-variant tracking-wider uppercase mb-1">Current Grade</p>
                       <div className="flex items-center gap-1.5">
                         <span className="material-symbols-outlined text-primary text-sm">grade</span>
-                        <span className="font-mono text-sm font-semibold text-on-surface">CGPA 3.58 / 4.00</span>
+                        <span className="font-mono text-sm font-semibold text-on-surface">CGPA 3.59 / 4.00</span>
                       </div>
                     </div>
                     <div className="col-span-2 sm:col-span-1">
@@ -661,7 +730,7 @@ export default function Home() {
                     <ul className="space-y-4">
                       {[
                         "Specialized in Software Engineering principles, database design, and algorithmic analysis.",
-                        "Maintained continuous academic excellence with a top-tier CGPA of 3.56.",
+                        "Maintained continuous academic excellence with a top-tier CGPA of 3.59.",
                         "Bridged the gap between theory and practice by building 15+ complex MERN stack and desktop applications."
                       ].map((highlight, index) => (
                         <li key={index} className="flex gap-3 items-start">
@@ -742,7 +811,7 @@ export default function Home() {
           <div className="max-w-container-max mx-auto">
             <div className="text-center mb-16 reveal-up">
               <h2 className="font-headline-md text-headline-md text-on-surface mb-4">
-                Core Technologies
+                Technical Skills
               </h2>
               <p className="font-body-lg text-on-surface-variant max-w-2xl mx-auto">
                 My technical arsenal for building future-ready applications.
@@ -751,15 +820,76 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { icon: "css", name: "Tailwind CSS", desc: "Modern utility-first responsive UI design." },
-                { icon: "JS", name: "JavaScript", desc: "Expert in ES6+ and asynchronous programming." },
-                { icon: "R", name: "React / Next.js", desc: "Building scalable, SEO-friendly SSR applications." },
-                { icon: "TS", name: "TypeScript", desc: "Type-safe scalable application development (basic/learning)." },
-                { icon: "database", name: "MongoDB", desc: "Architecting efficient NoSQL data structures." },
-                { icon: "terminal", name: "Node.js", desc: "Scalable backend systems and API design." },
-                { icon: "git", name: "Git & GitHub", desc: "Version control and collaborative development." },
-                { icon: "security", name: "Cybersecurity", desc: "Learning ethical hacking and secure coding." },
-                { icon: "psychology", name: "AI Integration", desc: "Implementing LLMs and smart features." }
+                {
+                  icon: "code",
+                  name: "C++",
+                  desc: "Strong foundation in problem solving and object-oriented programming."
+                },
+                {
+                  icon: "code",
+                  name: "Python",
+                  desc: "Developing AI, automation, computer vision, and backend applications."
+                },
+                {
+                  icon: "css",
+                  name: "Tailwind CSS",
+                  desc: "Modern utility-first responsive UI design."
+                },
+                {
+                  icon: "JS",
+                  name: "JavaScript",
+                  desc: "Modern ES6+ and asynchronous programming."
+                },
+                {
+                  icon: "TS",
+                  name: "TypeScript",
+                  desc: "Type-safe scalable application development."
+                },
+                {
+                  icon: "R",
+                  name: "React / Next.js",
+                  desc: "Building scalable, SEO-friendly full-stack applications."
+                },
+                {
+                  icon: "terminal",
+                  name: "Node.js",
+                  desc: "Scalable backend systems and server-side development."
+                },
+                {
+                  icon: "api",
+                  name: "Express.js & REST API",
+                  desc: "Developing secure and scalable RESTful APIs."
+                },
+                {
+                  icon: "database",
+                  name: "MongoDB",
+                  desc: "Efficient NoSQL database design and management."
+                },
+                {
+                  icon: "verified_user",
+                  name: "JWT Authentication",
+                  desc: "Implementing secure authentication and authorization."
+                },
+                {
+                  icon: "git",
+                  name: "Git & GitHub",
+                  desc: "Version control and collaborative development."
+                },
+                {
+                  icon: "cloud_upload",
+                  name: "Vercel",
+                  desc: "Deploying and managing modern web applications."
+                },
+                {
+                  icon: "psychology",
+                  name: "AI Integration",
+                  desc: "Integrating LLMs and AI-powered features."
+                },
+                {
+                  icon: "smart_toy",
+                  name: "Prompt Engineering",
+                  desc: "Designing effective prompts for AI applications."
+                }
               ].map((skill, idx) => (
                 <SpotlightCard key={idx} className="skill-card p-10 rounded-[32px] group">
                   <div className="w-16 h-16 mb-6 flex items-center justify-center bg-surface-container rounded-2xl group-hover:scale-110 transition-transform duration-500">
@@ -792,11 +922,67 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {[
                 {
-                  title: "Travel Booking Platform",
-                  desc: "A comprehensive MERN stack application with real-time availability and secure payments.",
-                  img: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=1000&auto=format&fit=crop",
-                  tags: ["React", "Node.js", "MongoDB", "Stripe"],
-                  github: "https://github.com/moajjem441/travel-booking-platform"
+                  title: "SkillHub",
+                  desc: "A production-grade AI-powered EdTech platform with secure authentication, personalized course recommendations, Stripe payments, and intelligent course management.",
+                  img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+                  tags: [
+                    "Next.js",
+                    "TypeScript",
+                    "Express.js",
+                    "MongoDB",
+                    "Better Auth",
+                    "JWT",
+                    "Stripe",
+                    "Groq AI"
+                  ],
+                  github: "https://github.com/moajjem441/SkillHub",
+                  live: "https://skillhub-ivory.vercel.app"
+                },
+                {
+                  title: "Online Ticket Booking Platform",
+                  desc: "A full-stack ticket booking platform with secure authentication, role-based dashboards, online booking, and payment integration.",
+                  img: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=1000&auto=format&fit=crop",
+                  tags: [
+                    "Next.js",
+                    "TypeScript",
+                    "Node.js",
+                    "Express.js",
+                    "MongoDB",
+                    "JWT",
+                    "Stripe"
+                  ],
+                  github: "https://github.com/moajjem441/online-ticket-booking-platform",
+                  live: "https://online-ticket-booking-platform-eight.vercel.app"
+                },
+                {
+                  title: "IdeaVault",
+                  desc: "A full-stack startup idea sharing platform where users can publish innovative ideas, engage in discussions, and discover inspiring projects through a modern social experience.",
+                  img: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80",
+                  tags: [
+                    "Next.js",
+                    "React",
+                    "Tailwind CSS",
+                    "Node.js",
+                    "Express.js",
+                    "MongoDB"
+                  ],
+                  github: "https://github.com/moajjem441/ideavault-client-site",
+                  live: "https://ideavault-tau-gray.vercel.app/"
+                },
+                {
+                  title: "SkillSphere",
+                  desc: "A modern online learning platform where users can discover, search, and enroll in skill-based courses with secure authentication and protected learning experiences.",
+                  img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+                  tags: [
+                    "Next.js",
+                    "React",
+                    "Tailwind CSS",
+                    "Better Auth",
+                    "HeroUI",
+                    "DaisyUI"
+                  ],
+                  github: "https://github.com/moajjem441/Skill-Sphere",
+                  live: "https://skill-sphere-taupe.vercel.app"
                 },
 
                 {
@@ -815,21 +1001,6 @@ export default function Home() {
                   github: "https://github.com/moajjem441/third-eye-assistive-system"
                 },
 
-                {
-                  title: "Payoo App",
-                  desc: "A secure digital payment and wallet system with transaction management and user authentication features.",
-                  img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1000&auto=format&fit=crop",
-                  tags: ["React", "Node.js", "MongoDB", "Fintech"],
-                  github: "https://github.com/moajjem441/Payoo-App"
-                },
-
-                {
-                  title: "Mini Social Media",
-                  desc: "A Java Swing based mini social media platform featuring posts, comments, messaging, notifications, and modern UI interactions.",
-                  img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop",
-                  tags: ["Java", "Swing", "MySQL", "Desktop App"],
-                  github: "https://github.com/moajjem441/Mini_Social_Media"
-                },
                 {
                   title: "Liver Disease Stage Prediction",
                   desc: "A machine learning project focused on predictive modeling for liver disease stage detection using data analysis and ML algorithms.",
@@ -860,19 +1031,39 @@ export default function Home() {
                   <p className="text-on-surface-variant mb-6 leading-relaxed">
                     {project.desc}
                   </p>
-                  <Magnetic>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-primary font-label-caps text-xs group/btn"
-                    >
-                      VIEW PROJECT
-                      <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">
-                        arrow_forward
-                      </span>
-                    </a>
-                  </Magnetic>
+                  <div className="flex items-center gap-4">
+                    {/* GitHub Button */}
+                    <Magnetic>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-primary font-label-caps text-xs group/btn"
+                      >
+                        GITHUB
+                        <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">
+                          arrow_forward
+                        </span>
+                      </a>
+                    </Magnetic>
+
+                    {/* Live Demo Button */}
+                    {project.live && (
+                      <Magnetic>
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-on-surface font-label-caps text-xs group/btn"
+                        >
+                          LIVE DEMO
+                          <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">
+                            open_in_new
+                          </span>
+                        </a>
+                      </Magnetic>
+                    )}
+                  </div>
                 </TiltCard>
               ))}
             </div>
@@ -891,45 +1082,70 @@ export default function Home() {
               </p>
             </div>
 
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-8" onSubmit={(e) => {
-              e.preventDefault();
-              alert("Thanks! I will contact you soon.");
-            }}
-
+            <form
+              className="grid grid-cols-1 md:grid-cols-2 gap-8"
+              onSubmit={handleContactSubmit}
             >
-
               <div className="space-y-2">
-                <label className="font-label-caps text-[10px] uppercase text-primary tracking-widest ml-1">Name</label>
+                <label className="font-label-caps text-[10px] uppercase text-primary tracking-widest ml-1">
+                  Name
+                </label>
                 <input
                   type="text"
+                  name="name"
                   className="w-full bg-surface-container border border-outline-variant/30 rounded-xl px-6 py-4 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/20 transition-all text-on-surface"
                   placeholder="Your name"
                 />
               </div>
+
               <div className="space-y-2">
-                <label className="font-label-caps text-[10px] uppercase text-primary tracking-widest ml-1">Email</label>
+                <label className="font-label-caps text-[10px] uppercase text-primary tracking-widest ml-1">
+                  Email
+                </label>
                 <input
                   type="email"
+                  name="email"
                   className="w-full bg-surface-container border border-outline-variant/30 rounded-xl px-6 py-4 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/20 transition-all text-on-surface"
                   placeholder="your@email.com"
                 />
               </div>
+
               <div className="md:col-span-2 space-y-2">
-                <label className="font-label-caps text-[10px] uppercase text-primary tracking-widest ml-1">Message</label>
+                <label className="font-label-caps text-[10px] uppercase text-primary tracking-widest ml-1">
+                  Message
+                </label>
                 <textarea
                   rows={4}
+                  name="message"
                   className="w-full bg-surface-container border border-outline-variant/30 rounded-xl px-6 py-4 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/20 transition-all resize-none text-on-surface"
                   placeholder="Tell me about your project..."
                 />
               </div>
+
               <div className="md:col-span-2 text-center pt-4">
                 <Magnetic>
-                  <button className="bg-primary-container text-on-primary-container px-12 py-4 rounded-xl font-label-caps text-label-caps primary-glow hover:bg-primary/90 transition-all duration-300 w-full md:w-auto">
-                    Send Message
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="bg-primary-container text-on-primary-container px-12 py-4 rounded-xl font-label-caps text-label-caps primary-glow hover:bg-primary/90 transition-all duration-300 w-full md:w-auto disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </button>
                 </Magnetic>
               </div>
             </form>
+
+            <div
+              aria-live="polite"
+              className={`mt-6 min-h-6 text-center text-sm font-medium ${contactStatus.type === "success"
+                ? "text-green-400"
+                : contactStatus.type === "error"
+                  ? "text-red-400"
+                  : "text-on-surface-variant"
+                }`}
+            >
+              {contactStatus.message}
+            </div>
 
             <div className="mt-16 pt-12 border-t border-white/5 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>

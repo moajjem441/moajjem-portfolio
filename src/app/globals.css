@@ -58,12 +58,15 @@
   --spacing-gutter: 24px;
   --spacing-section-padding: 120px;
 
-  --font-body-md: var(--font-inter), sans-serif;
-  --font-label-caps: var(--font-jetbrains), monospace;
-  --font-headline-md: var(--font-inter), sans-serif;
-  --font-body-lg: var(--font-inter), sans-serif;
-  --font-display-lg: var(--font-inter), sans-serif;
-  --font-display-lg-mobile: var(--font-inter), sans-serif;
+  --font-inter: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-jetbrains: "JetBrains Mono", "SFMono-Regular", "SF Mono", "Consolas", monospace;
+
+  --font-body-md: var(--font-inter);
+  --font-label-caps: var(--font-jetbrains);
+  --font-headline-md: var(--font-inter);
+  --font-body-lg: var(--font-inter);
+  --font-display-lg: var(--font-inter);
+  --font-display-lg-mobile: var(--font-inter);
 
   --font-size-body-md: 16px;
   --font-size-label-caps: 12px;

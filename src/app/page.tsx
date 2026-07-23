@@ -599,7 +599,7 @@ export default function Home() {
                 {/* Floating Cards */}
                 <div className="hero-parallax-reverse glass-card absolute -top-4 -left-4 md:-top-10 md:-left-12 p-4 md:p-6 rounded-xl md:rounded-2xl z-20 w-32 md:w-48">
                   <div className="text-primary font-display-lg-mobile text-[20px] md:text-[28px] mb-1">
-                    <span className="stat-counter" data-value="15">0</span>+
+                    <span className="stat-counter" data-value="10">0</span>+
                   </div>
                   <div className="font-label-caps text-[8px] md:text-[10px] text-on-surface-variant tracking-widest uppercase">
                     Projects Built

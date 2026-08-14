@@ -990,6 +990,26 @@ export default function Home() {
                   github: "https://github.com/moajjem441/SkillHub",
                   live: "https://skillhub-ivory.vercel.app"
                 },
+
+                {
+    title: "BookNest",
+    desc: "A modern full-stack community book sharing platform where users can share physical books and digital PDF resources, request to borrow books, manage their personal library, and securely access approved resources.",
+    img: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=1200&q=80",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Express.js",
+      "MongoDB",
+      "Better Auth",
+      "JWT",
+      "Framer Motion"
+    ],
+    href: "/booknest",
+    github: "https://github.com/moajjem441/BookNest",
+    live: "https://booknest-eight-black.vercel.app"
+  },
+
+
                 {
                   title: "Online Ticket Booking Platform",
                   desc: "A full-stack ticket booking platform with secure authentication, role-based dashboards, online booking, and payment integration.",

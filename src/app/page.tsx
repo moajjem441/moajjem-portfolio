@@ -1046,7 +1046,7 @@ export default function Home() {
                 {
                   title: "SkillSphere",
                   desc: "A modern online learning platform where users can discover, search, and enroll in skill-based courses with secure authentication and protected learning experiences.",
-                  img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+                  img: "/projects/skillsphere.png",
                   tags: [
                     "Next.js",
                     "React",

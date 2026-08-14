@@ -15,7 +15,7 @@ export default function MindRefreshmentPage() {
         <div className="glass-card p-8 md:p-12 rounded-[40px] border border-white/5">
           <div className="aspect-[16/9] rounded-3xl overflow-hidden mb-8 border border-white/5 bg-surface-container-high/50">
             <img
-              src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1000&auto=format&fit=crop"
+              src="/projects/mind-refreshment.png"
               alt="Mind Refreshment App"
               className="w-full h-full object-cover"
             />

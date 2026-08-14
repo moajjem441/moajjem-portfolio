@@ -17,7 +17,7 @@ export default function SkillHubPage() {
           {/* Project Image */}
           <div className="aspect-[16/9] rounded-3xl overflow-hidden mb-8 border border-white/5 bg-surface-container-high/50">
             <img
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+              src="/projects/skillhub.png"
               alt="SkillHub"
               className="w-full h-full object-cover"
             />

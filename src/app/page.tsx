@@ -975,7 +975,7 @@ export default function Home() {
                 {
                   title: "SkillHub",
                   desc: "A production-grade AI-powered EdTech platform with secure authentication, personalized course recommendations, Stripe payments, and intelligent course management.",
-                  img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+                  img: "/projects/skillhub.png",
                   tags: [
                     "Next.js",
                     "TypeScript",

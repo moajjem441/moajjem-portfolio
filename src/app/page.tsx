@@ -1030,7 +1030,7 @@ export default function Home() {
                 {
                   title: "IdeaVault",
                   desc: "A full-stack startup idea sharing platform where users can publish innovative ideas, engage in discussions, and discover inspiring projects through a modern social experience.",
-                  img: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80",
+                  img: "/projects/ideavault.png",
                   tags: [
                     "Next.js",
                     "React",

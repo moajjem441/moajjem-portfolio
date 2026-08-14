@@ -16,8 +16,10 @@ export default function BookNestPage() {
 
         <div className="glass-card p-8 md:p-12 rounded-[40px] border border-white/5">
           <div className="aspect-[16/9] rounded-3xl overflow-hidden mb-8 border border-white/5 bg-surface-container-high/50">
+            
+
             <img
-              src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=1200&q=80"
+              src="/projects/booknest.png"
               alt="BookNest"
               className="w-full h-full object-cover"
             />

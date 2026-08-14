@@ -1062,7 +1062,7 @@ export default function Home() {
                 {
                   title: "Mind Refreshment App",
                   desc: "A mental wellness application designed to help users track mood, relax, and improve mental well-being using interactive features.",
-                  img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1000&auto=format&fit=crop",
+                  img: "/projects/mind-refreshment.png",
                   tags: ["React", "Node.js", "MongoDB", "Mental Health"],
                   href: "/mind-refreshment", // ✅ নতুন
                   github: "https://github.com/moajjem441/Mind_Refreshment_App_-Sem-6-",

@@ -1013,7 +1013,7 @@ export default function Home() {
                 {
                   title: "Online Ticket Booking Platform",
                   desc: "A full-stack ticket booking platform with secure authentication, role-based dashboards, online booking, and payment integration.",
-                  img: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=1000&auto=format&fit=crop",
+                  img: "/projects/ticket-booking.png",
                   tags: [
                     "Next.js",
                     "TypeScript",

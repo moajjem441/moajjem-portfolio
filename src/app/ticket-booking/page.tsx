@@ -17,7 +17,7 @@ export default function TicketBookingPage() {
           {/* Project Image */}
           <div className="aspect-[16/9] rounded-3xl overflow-hidden mb-8 border border-white/5 bg-surface-container-high/50">
             <img
-              src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=1000&auto=format&fit=crop"
+              src="/projects/ticket-booking.png"
               alt="Online Ticket Booking Platform"
               className="w-full h-full object-cover"
             />

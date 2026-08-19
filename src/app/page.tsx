@@ -957,6 +957,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        
 
         {/* Projects */}
         <section id="projects" className="py-section-padding px-gutter">
@@ -1055,7 +1056,7 @@ export default function Home() {
                     "HeroUI",
                     "DaisyUI"
                   ],
-                  href: "/projects/skillSphere",     // ✅ নতুন
+                  href: "/projects/skillsphere",     // ✅ নতুন
                   github: "https://github.com/moajjem441/Skill-Sphere",
                   live: "https://skill-sphere-taupe.vercel.app"
                 },

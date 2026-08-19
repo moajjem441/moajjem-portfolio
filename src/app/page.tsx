@@ -858,7 +858,7 @@ export default function Home() {
         </section>
 
         {/* Skills */}
-        <section id="skills" className="py-section-padding px-gutter bg-surface-container-low/20">
+        {/* <section id="skills" className="py-section-padding px-gutter bg-surface-container-low/20">
           <div className="max-w-container-max mx-auto">
             <div className="text-center mb-16 reveal-up">
               <h2 className="font-headline-md text-headline-md text-on-surface mb-4">
@@ -956,8 +956,268 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
+
+
+<section
+  id="skills"
+  className="py-section-padding px-gutter bg-surface-container-low/20"
+>
+  <div className="max-w-container-max mx-auto">
+    {/* Header */}
+    <div className="text-center mb-16 reveal-up">
+      <h2 className="font-headline-md text-headline-md text-on-surface mb-4">
+        Technical Skills
+      </h2>
+
+      <p className="font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+        My technical arsenal for building future-ready applications.
+      </p>
+    </div>
+
+    {(() => {
+      const skills = [
+        // ==================== FRONTEND ====================
+        {
+          icon: "R",
+          name: "React.js",
+          desc: "Building dynamic, reusable, and component-based user interfaces.",
+          category: "frontend",
+        },
+        {
+          icon: "N",
+          name: "Next.js",
+          desc: "Developing scalable, SEO-friendly, and full-stack web applications.",
+          category: "frontend",
+        },
+        {
+          icon: "TS",
+          name: "TypeScript",
+          desc: "Building type-safe and scalable modern web applications.",
+          category: "frontend",
+        },
+        {
+          icon: "css",
+          name: "Tailwind CSS",
+          desc: "Creating modern, responsive, and utility-first user interfaces.",
+          category: "frontend",
+        },
+        {
+          icon: "D",
+          name: "DaisyUI",
+          desc: "Building responsive interfaces with reusable Tailwind CSS components.",
+          category: "frontend",
+        },
+        {
+          icon: "H",
+          name: "HeroUI",
+          desc: "Creating modern React interfaces with accessible and reusable components.",
+          category: "frontend",
+        },
+        {
+          icon: "S",
+          name: "shadcn/ui",
+          desc: "Building customizable and accessible UI components for modern React applications.",
+          category: "frontend",
+        },
+        {
+          icon: "HTML",
+          name: "HTML5",
+          desc: "Building semantic and accessible web page structures.",
+          category: "frontend",
+        },
+        {
+          icon: "CSS",
+          name: "CSS3",
+          desc: "Creating responsive layouts, animations, and modern visual designs.",
+          category: "frontend",
+        },
+
+        // ==================== BACKEND ====================
+        {
+          icon: "terminal",
+          name: "Node.js",
+          desc: "Building scalable server-side applications and backend systems.",
+          category: "backend",
+        },
+        {
+          icon: "server",
+          name: "Express.js",
+          desc: "Developing fast, scalable, and maintainable backend applications.",
+          category: "backend",
+        },
+        {
+          icon: "api",
+          name: "REST APIs",
+          desc: "Designing and developing secure and scalable RESTful APIs.",
+          category: "backend",
+        },
+        {
+          icon: "verified_user",
+          name: "JWT Authentication",
+          desc: "Implementing secure authentication and authorization systems.",
+          category: "backend",
+        },
+
+        // ==================== DATABASE ====================
+        {
+          icon: "database",
+          name: "MongoDB",
+          desc: "Designing and managing flexible NoSQL databases for modern applications.",
+          category: "database",
+        },
+        {
+          icon: "database",
+          name: "PostgreSQL",
+          desc: "Working with relational databases and structured data management.",
+          category: "database",
+        },
+        {
+          icon: "schema",
+          name: "Prisma ORM",
+          desc: "Managing type-safe database access and modern data models.",
+          category: "database",
+        },
+
+        // ==================== PROGRAMMING ====================
+        {
+          icon: "C++",
+          name: "C++",
+          desc: "Strong foundation in problem solving, algorithms, and object-oriented programming.",
+          category: "programming",
+        },
         
+        {
+          icon: "Py",
+          name: "Python",
+          desc: "Developing AI, automation, computer vision, and backend applications.",
+          category: "programming",
+        },
+        {
+          icon: "JS",
+          name: "JavaScript",
+          desc: "Modern ES6+ development with asynchronous and functional programming.",
+          category: "programming",
+        },
+
+        // ==================== AI & ML ====================
+        {
+          icon: "psychology",
+          name: "AI Integration",
+          desc: "Integrating AI-powered features and intelligent solutions into applications.",
+          category: "ai",
+        },
+        {
+          icon: "smart_toy",
+          name: "Prompt Engineering",
+          desc: "Designing effective prompts for reliable and context-aware AI applications.",
+          category: "ai",
+        },
+        {
+          icon: "auto_awesome",
+          name: "LLM APIs",
+          desc: "Working with large language models and AI APIs to build intelligent features.",
+          category: "ai",
+        },
+        {
+          icon: "visibility",
+          name: "Computer Vision",
+          desc: "Working with image processing, object detection, and vision-based applications.",
+          category: "ai",
+        },
+
+        // ==================== TOOLS ====================
+        {
+          icon: "git",
+          name: "Git & GitHub",
+          desc: "Version control, collaboration, and managing software development workflows.",
+          category: "tools",
+        },
+        {
+          icon: "api",
+          name: "Postman",
+          desc: "Testing, debugging, and documenting REST APIs efficiently.",
+          category: "tools",
+        },
+        {
+          icon: "cloud_upload",
+          name: "Vercel",
+          desc: "Deploying and managing modern web applications and APIs.",
+          category: "tools",
+        },
+        {
+          icon: "cloud",
+          name: "Firebase",
+          desc: "Working with authentication, databases, and cloud-based services.",
+          category: "tools",
+        },
+      ];
+
+      // Category order
+      const categoryOrder = [
+        { key: "frontend", title: " Frontend" },
+        { key: "backend", title: " Backend" },
+        { key: "database", title: " Database" },
+        { key: "programming", title: " Programming Languages" },
+        { key: "ai", title: " AI & Machine Learning" },
+        { key: "tools", title: " Tools & DevOps" },
+      ];
+
+      // Render grouped skills
+      return categoryOrder.map(({ key, title }) => {
+        const items = skills.filter(
+          (skill) => skill.category === key
+        );
+
+        if (items.length === 0) return null;
+
+        return (
+          <div key={key} className="mb-12 last:mb-0">
+            {/* Category Title */}
+            <h3 className="text-2xl font-bold text-on-surface mb-6">
+              {title}
+            </h3>
+
+            {/* Skill Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {items.map((skill, idx) => (
+                <SpotlightCard
+                  key={`${key}-${idx}`}
+                  className="skill-card p-10 rounded-[32px] group"
+                >
+                  {/* Icon */}
+                  <div className="w-16 h-16 mb-6 flex items-center justify-center bg-surface-container rounded-2xl group-hover:scale-110 transition-transform duration-500">
+                    {skill.icon.length > 2 ? (
+                      <span className="text-2xl font-bold text-primary">
+                        {skill.icon}
+                      </span>
+                    ) : (
+                      <span className="text-3xl font-bold text-primary">
+                        {skill.icon}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Skill Name */}
+                  <h3 className="text-xl font-bold mb-3">
+                    {skill.name}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-on-surface-variant text-sm leading-relaxed">
+                    {skill.desc}
+                  </p>
+                </SpotlightCard>
+              ))}
+            </div>
+          </div>
+        );
+      });
+    })()}
+  </div>
+</section>
+
+
 
         {/* Projects */}
         <section id="projects" className="py-section-padding px-gutter">

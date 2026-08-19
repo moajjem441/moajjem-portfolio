@@ -15,7 +15,7 @@ export default function SkillSpherePage() {
         <div className="glass-card p-8 md:p-12 rounded-[40px] border border-white/5">
           <div className="aspect-[16/9] rounded-3xl overflow-hidden mb-8 border border-white/5 bg-surface-container-high/50">
             <img
-              src="/projects/skillSphere.png"
+              src="/projects/skillsphere.png"
               alt="SkillSphere"
               className="w-full h-full object-cover"
             />

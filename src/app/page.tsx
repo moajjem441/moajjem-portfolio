@@ -1055,7 +1055,7 @@ export default function Home() {
                     "HeroUI",
                     "DaisyUI"
                   ],
-                  href: "/projects/skillsphere",     // ✅ নতুন
+                  href: "/projects/skillSphere",     // ✅ নতুন
                   github: "https://github.com/moajjem441/Skill-Sphere",
                   live: "https://skill-sphere-taupe.vercel.app"
                 },

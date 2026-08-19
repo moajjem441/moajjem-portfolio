@@ -1128,29 +1128,35 @@ export default function Home() {
 
         // ==================== TOOLS ====================
         {
-          icon: "git",
-          name: "Git & GitHub",
-          desc: "Version control, collaboration, and managing software development workflows.",
-          category: "tools",
-        },
-        {
-          icon: "api",
-          name: "Postman",
-          desc: "Testing, debugging, and documenting REST APIs efficiently.",
-          category: "tools",
-        },
-        {
-          icon: "cloud_upload",
-          name: "Vercel",
-          desc: "Deploying and managing modern web applications and APIs.",
-          category: "tools",
-        },
-        {
-          icon: "cloud",
-          name: "Firebase",
-          desc: "Working with authentication, databases, and cloud-based services.",
-          category: "tools",
-        },
+  icon: "git",
+  name: "Git & GitHub",
+  desc: "Version control, collaboration, and managing software development workflows.",
+  category: "tools",
+},
+{
+  icon: "api",
+  name: "Postman",
+  desc: "Testing, debugging, and documenting REST APIs efficiently.",
+  category: "tools",
+},
+{
+  icon: "cloud_upload",
+  name: "Vercel",
+  desc: "Deploying and managing modern web applications and APIs.",
+  category: "tools",
+},
+{
+  icon: "cloud_upload",
+  name: "Render",
+  desc: "Deploying and hosting backend services, APIs, and full-stack applications.",
+  category: "tools",
+},
+{
+  icon: "cloud",
+  name: "Firebase",
+  desc: "Working with authentication, databases, and cloud-based services.",
+  category: "tools",
+},
       ];
 
       // Category order

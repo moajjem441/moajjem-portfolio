@@ -615,7 +615,7 @@ export default function Home() {
 
                 <div className="hero-parallax-reverse glass-card absolute -bottom-4 -left-4 md:-bottom-8 md:-left-8 p-4 md:p-6 rounded-xl md:rounded-2xl z-20 w-36 md:w-52">
                   <div className="text-primary font-display-lg-mobile text-[20px] md:text-[28px] mb-1">
-                    <span className="stat-counter" data-value="690">0</span>+
+                    <span className="stat-counter" data-value="908">0</span>+
                   </div>
                   <div className="font-label-caps text-[8px] md:text-[10px] text-on-surface-variant tracking-widest uppercase">
                     Codeforces Rating
@@ -667,83 +667,83 @@ export default function Home() {
 
                 {/* 🆕 NEW: Hobbies & Interests Section */}
                 <div className="mb-8 p-5 rounded-2xl bg-surface-container/50 border border-outline-variant/20">
-  <h4 className="font-label-caps text-[10px] uppercase text-primary tracking-widest mb-3 flex items-center gap-2">
-    <span className="material-symbols-outlined text-sm">favorite</span>
-    Beyond the Screen
-  </h4>
+                  <h4 className="font-label-caps text-[10px] uppercase text-primary tracking-widest mb-3 flex items-center gap-2">
+                    <span className="material-symbols-outlined text-sm">favorite</span>
+                    Beyond the Screen
+                  </h4>
 
-  <p className="text-on-surface-variant text-sm leading-relaxed mb-4">
-    When I'm not immersed in code, I love spending time playing{" "}
-    <strong className="text-on-surface">football</strong> and{" "}
-    <strong className="text-on-surface">badminton</strong>. I also enjoy
-    capturing the beauty of nature through{" "}
-    <strong className="text-on-surface">mobile photography</strong> and{" "}
-    <strong className="text-on-surface">videography</strong>. I'm an avid{" "}
-    <strong className="text-on-surface">tech-podcast</strong> listener and
-    enjoy{" "}
-    <strong className="text-on-surface">reading</strong> to explore new ideas
-    and perspectives.
-  </p>
+                  <p className="text-on-surface-variant text-sm leading-relaxed mb-4">
+                    When I'm not immersed in code, I love spending time playing{" "}
+                    <strong className="text-on-surface">football</strong> and{" "}
+                    <strong className="text-on-surface">badminton</strong>. I also enjoy
+                    capturing the beauty of nature through{" "}
+                    <strong className="text-on-surface">mobile photography</strong> and{" "}
+                    <strong className="text-on-surface">videography</strong>. I'm an avid{" "}
+                    <strong className="text-on-surface">tech-podcast</strong> listener and
+                    enjoy{" "}
+                    <strong className="text-on-surface">reading</strong> to explore new ideas
+                    and perspectives.
+                  </p>
 
-  {/* Hobby Icons */}
-  <div className="flex flex-wrap gap-4">
-    {/* Mobile Photography */}
-    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs">
-      <span className="material-symbols-outlined text-primary text-sm">
-        photo_camera
-      </span>
-      Mobile Photography
-    </span>
+                  {/* Hobby Icons */}
+                  <div className="flex flex-wrap gap-4">
+                    {/* Mobile Photography */}
+                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs">
+                      <span className="material-symbols-outlined text-primary text-sm">
+                        photo_camera
+                      </span>
+                      Mobile Photography
+                    </span>
 
-    {/* Nature Photography */}
-    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs">
-      <span className="material-symbols-outlined text-primary text-sm">
-        nature
-      </span>
-      Nature Photography
-    </span>
+                    {/* Nature Photography */}
+                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs">
+                      <span className="material-symbols-outlined text-primary text-sm">
+                        nature
+                      </span>
+                      Nature Photography
+                    </span>
 
-    {/* Videography */}
-    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs">
-      <span className="material-symbols-outlined text-primary text-sm">
-        videocam
-      </span>
-      Videography
-    </span>
+                    {/* Videography */}
+                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs">
+                      <span className="material-symbols-outlined text-primary text-sm">
+                        videocam
+                      </span>
+                      Videography
+                    </span>
 
-    {/* Football */}
-    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs">
-      <span className="material-symbols-outlined text-primary text-sm">
-        sports_soccer
-      </span>
-      Football
-    </span>
+                    {/* Football */}
+                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs">
+                      <span className="material-symbols-outlined text-primary text-sm">
+                        sports_soccer
+                      </span>
+                      Football
+                    </span>
 
-    {/* Badminton */}
-    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs">
-      <span className="material-symbols-outlined text-primary text-sm">
-        sports_tennis
-      </span>
-      Badminton
-    </span>
+                    {/* Badminton */}
+                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs">
+                      <span className="material-symbols-outlined text-primary text-sm">
+                        sports_tennis
+                      </span>
+                      Badminton
+                    </span>
 
-    {/* Podcasts */}
-    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs">
-      <span className="material-symbols-outlined text-primary text-sm">
-        podcasts
-      </span>
-      Podcasts
-    </span>
+                    {/* Podcasts */}
+                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs">
+                      <span className="material-symbols-outlined text-primary text-sm">
+                        podcasts
+                      </span>
+                      Podcasts
+                    </span>
 
-    {/* Reading */}
-    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs">
-      <span className="material-symbols-outlined text-primary text-sm">
-        menu_book
-      </span>
-      Reading
-    </span>
-  </div>
-</div>
+                    {/* Reading */}
+                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs">
+                      <span className="material-symbols-outlined text-primary text-sm">
+                        menu_book
+                      </span>
+                      Reading
+                    </span>
+                  </div>
+                </div>
 
                 {/* Stats (unchanged) */}
                 <div className="grid grid-cols-2 gap-6">

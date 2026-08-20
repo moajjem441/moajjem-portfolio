@@ -641,7 +641,7 @@ export default function Home() {
                 <div className="space-y-12">
                   {[
                     { year: "2022", title: "Started BUBT", desc: "Began my journey in Computer Science and Engineering." },
-                    { year: "2024", title: "Problem Solver", desc: "Achieved 690+ rating on Codeforces and 15+ real-world projects." },
+                    { year: "2024", title: "Problem Solver", desc: "Achieved 908+ rating on Codeforces and 15+ real-world projects." },
                     { year: "2025", title: "MERN Mastery", desc: "Deep dived into Full Stack Development with React and Node.js." }
                   ].map((item, idx) => (
                     <div key={idx} className="relative pl-8 border-l border-white/10 reveal-up">

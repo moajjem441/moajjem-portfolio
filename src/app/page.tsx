@@ -1254,38 +1254,38 @@ export default function Home() {
                   github: "https://github.com/moajjem441/online-ticket-booking-platform",
                   live: "https://online-ticket-booking-platform-eight.vercel.app"
                 },
-                {
-                  title: "IdeaVault",
-                  desc: "A full-stack startup idea sharing platform where users can publish innovative ideas, engage in discussions, and discover inspiring projects through a modern social experience.",
-                  img: "/projects/ideavault.png",
-                  tags: [
-                    "Next.js",
-                    "React",
-                    "Tailwind CSS",
-                    "Node.js",
-                    "Express.js",
-                    "MongoDB"
-                  ],
-                  href: "/ideavault",       // ✅ নতুন
-                  github: "https://github.com/moajjem441/ideavault-client-site",
-                  live: "https://ideavault-tau-gray.vercel.app/"
-                },
-                {
-                  title: "SkillSphere",
-                  desc: "A modern online learning platform where users can discover, search, and enroll in skill-based courses with secure authentication and protected learning experiences.",
-                  img: "/projects/skillsphere.png",
-                  tags: [
-                    "Next.js",
-                    "React",
-                    "Tailwind CSS",
-                    "Better Auth",
-                    "HeroUI",
-                    "DaisyUI"
-                  ],
-                  href: "/projects/skillsphere",     // ✅ নতুন
-                  github: "https://github.com/moajjem441/Skill-Sphere",
-                  live: "https://skill-sphere-taupe.vercel.app"
-                },
+                // {
+                //   title: "IdeaVault",
+                //   desc: "A full-stack startup idea sharing platform where users can publish innovative ideas, engage in discussions, and discover inspiring projects through a modern social experience.",
+                //   img: "/projects/ideavault.png",
+                //   tags: [
+                //     "Next.js",
+                //     "React",
+                //     "Tailwind CSS",
+                //     "Node.js",
+                //     "Express.js",
+                //     "MongoDB"
+                //   ],
+                //   href: "/ideavault",       // ✅ নতুন
+                //   github: "https://github.com/moajjem441/ideavault-client-site",
+                //   live: "https://ideavault-tau-gray.vercel.app/"
+                // },
+                // {
+                //   title: "SkillSphere",
+                //   desc: "A modern online learning platform where users can discover, search, and enroll in skill-based courses with secure authentication and protected learning experiences.",
+                //   img: "/projects/skillsphere.png",
+                //   tags: [
+                //     "Next.js",
+                //     "React",
+                //     "Tailwind CSS",
+                //     "Better Auth",
+                //     "HeroUI",
+                //     "DaisyUI"
+                //   ],
+                //   href: "/projects/skillsphere",     // ✅ নতুন
+                //   github: "https://github.com/moajjem441/Skill-Sphere",
+                //   live: "https://skill-sphere-taupe.vercel.app"
+                // },
                 {
                   title: "Mind Refreshment App",
                   desc: "A mental wellness application designed to help users track mood, relax, and improve mental well-being using interactive features.",

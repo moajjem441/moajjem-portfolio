@@ -1123,55 +1123,62 @@ export default function Home() {
               ];
 
               // Render grouped skills
-              return categoryOrder.map(({ key, title }) => {
-                const items = skills.filter(
-                  (skill) => skill.category === key
-                );
+              return (
+                <div className="space-y-8 max-w-5xl mx-auto">
+                  {categoryOrder.map(({ key, title }) => {
+                    const items = skills.filter(
+                      (skill) => skill.category === key
+                    );
 
-                if (items.length === 0) return null;
+                    if (items.length === 0) return null;
 
-                return (
-                  <div key={key} className="mb-12 last:mb-0">
-                    {/* Category Title */}
-                    <h3 className="text-2xl font-bold text-on-surface mb-6">
-                      {title}
-                    </h3>
+                    return (
+                      <div key={key}>
+                        {/* Category Title */}
+                        <h3 className="text-base md:text-lg font-bold text-on-surface mb-3.5">
+                          {title.trim()}
+                        </h3>
 
-                    {/* Skill Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {items.map((skill, idx) => (
-                        <SpotlightCard
-                          key={`${key}-${idx}`}
-                          className="skill-card p-10 rounded-[32px] group"
-                        >
-                          {/* Icon */}
-                          <div className="w-16 h-16 mb-6 flex items-center justify-center bg-surface-container rounded-2xl group-hover:scale-110 transition-transform duration-500">
-                            {skill.icon.length > 2 ? (
-                              <span className="text-2xl font-bold text-primary">
-                                {skill.icon}
-                              </span>
-                            ) : (
-                              <span className="text-3xl font-bold text-primary">
-                                {skill.icon}
-                              </span>
-                            )}
-                          </div>
-
-                          {/* Skill Name */}
-                          <h3 className="text-xl font-bold mb-3">
-                            {skill.name}
-                          </h3>
-
-                          {/* Description */}
-                          <p className="text-on-surface-variant text-sm leading-relaxed">
-                            {skill.desc}
-                          </p>
-                        </SpotlightCard>
-                      ))}
-                    </div>
-                  </div>
-                );
-              });
+                        {/* Skill Pills */}
+                        <div className="flex flex-wrap gap-2.5 md:gap-3">
+                          {items.map((skill, idx) => (
+                            <div
+                              key={`${key}-${idx}`}
+                              className="skill-card inline-flex items-center gap-1.5 md:gap-2 px-3 py-1 md:px-3.5 md:py-1.5 rounded-full text-xs md:text-sm font-medium text-on-surface hover:text-primary hover:border-primary/30 transition-all duration-200 hover:scale-105 cursor-default select-none"
+                            >
+                              {skill.icon && (
+                                <span
+                                  className={`inline-flex items-center justify-center text-primary shrink-0 select-none ${
+                                    [
+                                      "terminal",
+                                      "server",
+                                      "api",
+                                      "database",
+                                      "verified_user",
+                                      "schema",
+                                      "psychology",
+                                      "smart_toy",
+                                      "auto_awesome",
+                                      "visibility",
+                                      "cloud_upload",
+                                      "cloud",
+                                    ].includes(skill.icon)
+                                      ? "material-symbols-outlined text-[13px] md:text-[14px] leading-none"
+                                      : "text-[10px] md:text-[11px] font-bold font-mono leading-none"
+                                  }`}
+                                >
+                                  {skill.icon === "server" ? "dns" : skill.icon}
+                                </span>
+                              )}
+                              <span>{skill.name}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              );
             })()}
           </div>
         </section>

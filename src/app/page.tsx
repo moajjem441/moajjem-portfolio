@@ -607,7 +607,7 @@ export default function Home() {
                 </div>
 
                 <div className="hero-parallax-reverse glass-card absolute top-1/2 -right-4 md:-right-12 p-4 md:p-6 rounded-xl md:rounded-2xl z-20 w-28 md:w-44">
-                  <div className="text-primary font-display-lg-mobile text-[20px] md:text-[28px] mb-1">3.59</div>
+                  <div className="text-primary font-display-lg-mobile text-[20px] md:text-[28px] mb-1">3.56</div>
                   <div className="font-label-caps text-[8px] md:text-[10px] text-on-surface-variant tracking-widest uppercase">
                     Current CGPA
                   </div>
@@ -833,7 +833,7 @@ export default function Home() {
                     <ul className="space-y-4">
                       {[
                         "Specialized in Software Engineering principles, database design, and algorithmic analysis.",
-                        "Maintained continuous academic excellence with a top-tier CGPA of 3.59.",
+                        "Maintained continuous academic excellence with a top-tier CGPA of 3.56.",
                         "Bridged the gap between theory and practice by building 15+ complex MERN stack and desktop applications."
                       ].map((highlight, index) => (
                         <li key={index} className="flex gap-3 items-start">

@@ -815,7 +815,7 @@ export default function Home() {
                       <p className="font-label-caps text-[9px] text-on-surface-variant tracking-wider uppercase mb-1">Current Grade</p>
                       <div className="flex items-center gap-1.5">
                         <span className="material-symbols-outlined text-primary text-sm">grade</span>
-                        <span className="font-mono text-sm font-semibold text-on-surface">CGPA 3.59 / 4.00</span>
+                        <span className="font-mono text-sm font-semibold text-on-surface">CGPA 3.56 / 4.00</span>
                       </div>
                     </div>
                     <div className="col-span-2 sm:col-span-1">

@@ -58,7 +58,7 @@
   --spacing-gutter: 24px;
   --spacing-section-padding: 120px;
 
-  --font-inter: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-inter: "Inter", Arial, Helvetica, sans-serif;
   --font-jetbrains: "JetBrains Mono", "SFMono-Regular", "SF Mono", "Consolas", monospace;
 
   --font-body-md: var(--font-inter);

@@ -803,6 +803,7 @@ export default function Home() {
                     </div>
                   </div>
 
+
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8 border-y border-white/5 py-6">
                     <div>
                       <p className="font-label-caps text-[9px] text-on-surface-variant tracking-wider uppercase mb-1">Timeline</p>
